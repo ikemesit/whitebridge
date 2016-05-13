@@ -1,0 +1,198 @@
+// @import "bower_components/include-media/dist/_include-media.scss";
+
+// // Plug in include-media to BS4 grid breakpoints map
+// $breakpoints: $grid-breakpoints;
+
+
+.landing-wrap{
+  width: 100%;
+  height: 100vh;
+  background: url("../assets/images/professional-business-woman.jpg") no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 100vh rgba(#000, 0.4);
+  overflow-x: hidden;
+  & .container-fluid{
+    box-shadow: inset 0 12vh 80px rgba(#000, 0.1);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Nav Bar Styles
+.custom-nav{
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+
+
+  & .brand{
+    color: #fff;
+    font-size: 200%;
+    font-family: 'ralewaybold';
+    img{
+      max-width: 5rem;
+      display: inline-block;
+      //margin-right: 2rem;
+    }
+    & a{
+      color: #fff;
+    }
+    &:hover{
+      color:#fff;
+    }
+  }
+
+  & .nav-links{
+    margin-top: 0.6rem;
+    & a{
+      color: #fff;
+      //margin-right: 0.5rem;
+      font-family: 'ralewaybold';
+      border-bottom: thick solid rgba(#fff, 0);
+      transition: all 0.3s ease;
+      &:hover{
+        color: #ffbf00;
+        border-bottom: thick solid #ffbf00;
+      }
+    }
+
+    & li[class*="active"]{
+      & a{
+          color: #ffbf00;
+      }
+    }
+  }
+
+  & .nav-item{
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  & .nav-link{
+    text-decoration: none;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
+}
+
+
+.landing-content{
+  margin-top: 20%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  // @include media(">1280px"){
+  //   margin-top: 15%;
+  // }
+  color: #fff;
+  & h1{
+    font-family: 'ralewaybold';
+    font-size: ms(5);
+    margin: 0;
+  }
+  & p{
+    font-family: 'ralewaylight';
+    font-size: ms(0);
+    margin: 0 0 10px 0;
+  }
+
+  // @include media(">1280px"){
+  //   h1{
+  //     font-size: 6rem;
+  //   }
+  //   p{
+  //     font-size: 1.5rem;
+  //   }
+  // }
+}
+
+
+// Featurette Block
+.featurette-block{
+  padding: 3.5rem 3rem;
+  & .heading{
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -.05rem;
+      font-size: ms(3);
+      font-family: 'ralewaybold';
+      // @media (min-width: 40px) {
+      //   .featurette-heading {
+      //     font-size: 2rem;
+      //   }
+      // }
+
+      // @media (min-width: 62px) {
+      //   .featurette-heading {
+      //     margin-top: 1rem;
+      //   }
+      // }
+  }
+
+  & p.lead{
+      font-size: ms(0);
+      font-family: 'ralewaylight';
+  }
+}
+
+// marketing
+.section-1{
+  padding-top: 3rem;
+  & .col-lg-4 {
+    //margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  & h2 {
+    font-weight: normal;
+    font-size: ms(3);
+    font-family: 'ralewaybold';
+    margin-top: 1.5rem;
+  }
+  & p {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-family: 'ralewaylight';
+    font-size: ms(0);
+  }
+}
+
+
+//alpha overlay
+.alpha-overlay{
+  position: absolute;
+  margin-left: -3rem;
+  margin-top: -3.5rem;
+  width: 100%;
+  height: 350px;
+  display: block;
+  //z-index: 5;
+  background-color: rgba($black, 0.9);
+}
+
+
+.section-2{
+  text-align: center;
+  background: url('https://www.performdev.com/wp-content/uploads/2016/01/running-corporate-learning.jpg') no-repeat;
+  background-size: cover;
+  height: 350px;
+  overflow: hidden;
+  color: $white;
+  & .heading{
+    margin-top: 3rem;
+  }
+  & p.lead{
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+}
+
+
+
+
+
+
