@@ -47,20 +47,19 @@
   & .nav-links{
     margin-top: 0.6rem;
     & a{
-      color: #fff;
+      color: $white;
       //margin-right: 0.5rem;
       font-family: 'ralewaybold';
-      border-bottom: thick solid rgba(#fff, 0);
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       &:hover{
-        color: #ffbf00;
-        border-bottom: thick solid #ffbf00;
+        color: $brand-color6;
+        //border-bottom: thick solid #ffbf00;
       }
     }
 
     & li[class*="active"]{
       & a{
-          color: #ffbf00;
+          color: $brand-color6;
       }
     }
   }
@@ -90,14 +89,18 @@
   color: #fff;
   & h1{
     font-family: 'ralewaybold';
-    font-size: ms(5);
+    font-size: ms(6);
     margin: 0;
   }
   & p{
-    font-family: 'ralewaylight';
+    font-family: 'ralewayregular';
     font-size: ms(0);
     margin: 0 0 10px 0;
   }
+
+  // & button{
+  //   font-size: ms(1);
+  // }
 
   // @include media(">1280px"){
   //   h1{
@@ -112,7 +115,7 @@
 
 // Featurette Block
 .featurette-block{
-  padding: 3.5rem 3rem;
+  padding: 3.5rem 0;
   & .heading{
       font-weight: 300;
       line-height: 1;
@@ -134,7 +137,7 @@
 
   & p.lead{
       font-size: ms(0);
-      font-family: 'ralewaylight';
+      font-family: 'ralewayregular';
   }
 }
 
@@ -155,8 +158,11 @@
   & p {
     margin-right: 10px;
     margin-left: 10px;
-    font-family: 'ralewaylight';
+    font-family: 'ralewayregular';
     font-size: ms(0);
+  }
+  & a.btn{
+    margin-top: 1rem;
   }
 }
 
@@ -164,13 +170,13 @@
 //alpha overlay
 .alpha-overlay{
   position: absolute;
-  margin-left: -3rem;
+  //margin-left: -3rem;
   margin-top: -3.5rem;
   width: 100%;
   height: 350px;
   display: block;
   //z-index: 5;
-  background-color: rgba($black, 0.9);
+  background-color: rgba($brand-color1, 0.7);
 }
 
 
@@ -185,12 +191,67 @@
     margin-top: 3rem;
   }
   & p.lead{
-    margin-left: 3rem;
-    margin-right: 3rem;
+    padding-left: 50px;
+    padding-right: 50px;
   }
-
+  & a{
+    color: $white;
+    &:hover{
+      color: $brand-color6;
+    }
+  }
 }
 
+
+.section-3{
+  background-color: $brand-color4;
+}
+
+
+
+
+.upper-footer, .bottom-footer{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: darken($white, 10%);
+  line-height: ms(2);
+  & h4{
+    font-family: 'ralewaybold';
+    font-size: ms(2);
+  }
+
+  & p, a{
+    font-family: 'ralewayregular';
+    font-size: 13.5px;
+    color: $white;
+  }
+
+  & a{
+    transition: all 0.2s ease;
+    &:hover{
+      color: $brand-color3;
+      text-decoration: none;
+    }
+  }
+  & ul{
+    list-style: none;
+    padding-left: 0;
+    //line-height: ms(2);
+  }
+
+  & hr{
+    border-color: lighten($brand-color1, 10%);
+
+  }
+}
+
+.upper-footer{
+  background-color: $brand-color1;
+}
+
+.bottom-footer{
+  background-color: darken($brand-color1, 2%);
+}
 
 
 

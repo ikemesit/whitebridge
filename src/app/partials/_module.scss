@@ -1,0 +1,221 @@
+button.btn, a.btn{
+  background-color: transparent;
+  border-radius: 30px;
+  font-family: 'ralewaybold';
+}
+
+.brand-btn-primary{
+  border: thin solid $brand-color2;
+  color: $brand-color2;
+  transition: all 0.2s ease-in;
+  &:hover{
+    color: $white;
+    background-color: $brand-color2;
+  }
+
+  &:active{
+    color: $white;
+    background-color: $brand-color2;
+  }
+
+  &:focus{
+    color: $white;
+    background-color: $brand-color2;
+  }
+}
+
+.brand-btn-success{
+  border: thin solid $brand-success;
+  color: $brand-success;
+  transition: all 0.2s ease-in;
+  &:hover{
+    color: $white;
+    background-color: $brand-success;
+  }
+
+  &:active{
+    color: $white;
+    background-color: $brand-success;
+  }
+
+  &:focus{
+    color: $white;
+    background-color: $brand-success;
+  }
+}
+
+
+.brand-btn-warn{
+  border: thin solid $brand-color2;
+  color: $brand-color2;
+  transition: all 0.2s ease-in;
+  &:hover{
+    color: $white;
+    background-color: $brand-color2;
+  }
+
+  &:active{
+    color: $white;
+    background-color: $brand-color2;
+  }
+
+  &:focus{
+    color: $white;
+    background-color: $brand-color2;
+  }
+}
+
+
+.brand-btn-neg{
+  border: thin solid $white;
+  color: $white;
+  transition: all 0.2s ease-in;
+  &:hover{
+    color: $white;
+    background-color: $brand-color2;
+    border: thin solid $brand-color2;
+  }
+
+  &:active{
+    color: $white;
+    background-color: $brand-color2;
+    border: thin solid $brand-color2;
+  }
+
+  &:focus{
+    color: $white;
+    background-color: $brand-color2;
+    border: thin solid $brand-color2;
+  }
+}
+
+
+// Featurette Slider
+.featurette-slider{
+  padding: 5rem 0;
+  overflow: auto;
+  // & .container-fluid{
+  //   margin-left: 3.5rem;
+  //   margin-right: 3.5rem;
+  // }
+  & .heading{
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -.05px;
+      font-size: ms(3);
+      font-family: 'ralewaybold';
+      // @media (min-width: 40em) {
+      //   .featurette-heading {
+      //     font-size: 50px;
+      //   }
+      // }
+
+      // @media (min-width: 62em) {
+      //   .featurette-heading {
+      //     margin-top: 30px;
+      //   }
+      // }
+  }
+  & p{
+    font-family: 'ralewayregular';
+    font-size: ms(0);
+  }
+}
+
+// Unslider Styles
+.unslider-arrow{
+  background-color:none;
+  color: $white;
+  margin-top: -200px;
+  & span{
+    font-size: ms(3);
+    color: rgba($black, 0.5);
+    &:hover{
+      color: rgba($black, 0.8);
+    }
+  }
+} 
+
+.unslider-nav{
+  margin-bottom: 20px;
+}
+
+
+//Widget Styles
+.widget .panel, .widget.panel {
+    border-bottom-width: 1px;
+    border-bottom-color: #cfd9db;
+    overflow: hidden;
+}
+
+.widget {
+    margin-bottom: 20px;
+}
+
+.panel {
+    position: relative;
+    border-width: 1px;
+    border-color: #cfd9db;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 .0625rem .0625rem rgba(0,0,0,.05);
+    box-shadow: 0 .0625rem .0625rem rgba(0,0,0,.05);
+}
+
+.panel-body {
+    position: relative;
+}
+
+.widget-title{
+  font-family: 'ralewaybold';
+  color: $brand-color1;
+  font-size: ms(2);
+}
+
+.mb0 {
+    margin-bottom: 0!important;
+}
+
+.text-info {
+    color: #22A7F0!important;
+}
+
+.list-table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.list-table>li:first-child {
+    padding-left: 0;
+}
+
+.list-table>li {
+    display: table-cell;
+    table-layout: fixed;
+    vertical-align: middle;
+    width: auto;
+    padding: 0 5px;
+}
+
+.img-bordered-primary {
+    -webkit-box-shadow: 0 0 0 2px #fff,0 0 0 4px #446CB3;
+    box-shadow: 0 0 0 2px #fff,0 0 0 4px #446CB3;
+}
+
+.img-circle {
+    border-radius: 50%!important;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.semibold {
+    font-weight: 600;
+}
+.nm {
+    margin: 0!important;
+}
