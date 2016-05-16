@@ -27,6 +27,13 @@
         templateUrl: 'app/main/services.html',
         controller: 'MainController',
         controllerAs: 'main'
+      })
+
+      .state('contact', {
+        url: '/contact-us',
+        templateUrl: 'app/main/contact.html',
+        controller: 'MainController',
+        controllerAs: 'main'
       });
 
     $urlRouterProvider.otherwise('/');

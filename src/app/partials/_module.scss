@@ -92,12 +92,7 @@ button.btn, a.btn{
 
 // Featurette Slider
 .featurette-slider{
-  padding: 5rem 0;
   overflow: auto;
-  // & .container-fluid{
-  //   margin-left: 3.5rem;
-  //   margin-right: 3.5rem;
-  // }
   & .heading{
       font-weight: 300;
       line-height: 1;
@@ -119,6 +114,12 @@ button.btn, a.btn{
   & p{
     font-family: 'ralewayregular';
     font-size: ms(0);
+  }
+  & .padded{
+    padding: 5rem 0;
+  }
+  & img{
+    width: 500px;
   }
 }
 

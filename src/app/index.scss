@@ -4,6 +4,9 @@
  */
 $navbar-inverse-link-color: #5AADBB;
 $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+$fa-font-path: "../../bower_components/font-awesome/fonts";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+
 
 /**
  *  Do not remove the comments below. It's the markers used by wiredep to inject
@@ -81,6 +84,8 @@ $brand-color6: #ffbf00;
 
 html, body{
   font-size: ms(0);
+  font-family: 'ralewayregular';
+  //line-height: 24px;
   color: $brand-color1;
   & a{
     color: $brand-color1;
