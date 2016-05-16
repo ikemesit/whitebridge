@@ -1,9 +1,4 @@
-// @import "bower_components/include-media/dist/_include-media.scss";
-
-// // Plug in include-media to BS4 grid breakpoints map
-// $breakpoints: $grid-breakpoints;
-
-
+// Home-page landing viewport wrap 
 .landing-wrap{
   width: 100%;
   height: 100vh;
@@ -17,50 +12,27 @@
     padding-right: 0;
   }
 }
-
-// Nav Bar Styles
-.custom-nav{
+// Top Navigation General Styles
+%top-navigation{
   width: 100%;
   height: auto;
-  padding-top: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
-
+  padding: 20px 50px 10px 50px;
 
   & .brand{
-    color: #fff;
     font-size: 200%;
     font-family: 'ralewaybold';
     img{
       max-width: 5rem;
       display: inline-block;
-      //margin-right: 2rem;
-    }
-    & a{
-      color: #fff;
-    }
-    &:hover{
-      color:#fff;
     }
   }
 
   & .nav-links{
     margin-top: 0.6rem;
     & a{
-      color: $white;
-      //margin-right: 0.5rem;
+      margin-right: 0.5rem;
       font-family: 'ralewaybold';
       transition: all 0.2s ease;
-      &:hover{
-        color: $brand-color6;
-        //border-bottom: thick solid #ffbf00;
-      }
-    }
-
-    & li[class*="active"]{
-      & a{
-          color: $brand-color6;
-      }
     }
   }
 
@@ -75,64 +47,112 @@
       text-decoration: none;
     }
   }
-
 }
 
+// Home-page Navigation Styling
+.custom-nav{
+  @extend %top-navigation;
+  & .brand{
+    color: #fff;
+    & a{
+      color: #fff;
+    }
+    &:hover{
+      color:#fff;
+      text-decoration: none;
+    }
+  }
 
+  & .nav-links{
+    & a{
+      color: $white;
+      &:hover{
+        color: $brand-color6;
+      }
+    }
+
+    & li[class*="active"]{
+      & a{
+          color: $brand-color6;
+      }
+    }
+  }
+}
+
+// Other Pages Navigation Styling
+.custom-nav-alt{
+  @extend %top-navigation;
+  background-color: $white;
+  border-bottom: thin solid rgba($black, 0.2);
+  & .brand{
+    color: $brand-color1;
+    img{
+      color: $brand-color1;
+    }
+    & a{
+      color: $brand-color1;
+    }
+    &:hover{
+      color:$brand-color1;
+      text-decoration: none;
+    }
+  }
+
+  & .nav-links{
+    & a{
+      color: $brand-color1;
+      &:hover{
+        color: $brand-color6;
+      }
+    }
+
+    & li[class*="active"]{
+      & a{
+          color: $brand-color6;
+      }
+    }
+  }
+}
+
+// Home-page landing content
 .landing-content{
   margin-top: 20%;
   padding-left: 3rem;
   padding-right: 3rem;
-  // @include media(">1280px"){
-  //   margin-top: 15%;
-  // }
+  @include media(">1280px"){
+    margin-top: 15%;
+  }
   color: #fff;
   & h1{
     font-family: 'ralewaybold';
-    font-size: ms(6);
-    margin: 0;
+    font-size: ms(5);
+    margin: 0 0 10px 0;
   }
   & p{
     font-family: 'ralewayregular';
     font-size: ms(0);
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
   }
 
-  // & button{
-  //   font-size: ms(1);
-  // }
-
-  // @include media(">1280px"){
-  //   h1{
-  //     font-size: 6rem;
-  //   }
-  //   p{
-  //     font-size: 1.5rem;
-  //   }
-  // }
+  @include media(">1280px"){
+    h1{
+      font-size: ms(6);
+    }
+    p{
+      font-size: ms(1);
+    }
+  }
 }
 
 
 // Featurette Block
 .featurette-block{
-  padding: 3.5rem 0;
   & .heading{
       font-weight: 300;
       line-height: 1;
       letter-spacing: -.05rem;
       font-size: ms(3);
       font-family: 'ralewaybold';
-      // @media (min-width: 40px) {
-      //   .featurette-heading {
-      //     font-size: 2rem;
-      //   }
-      // }
-
-      // @media (min-width: 62px) {
-      //   .featurette-heading {
-      //     margin-top: 1rem;
-      //   }
-      // }
   }
 
   & p.lead{
@@ -141,8 +161,9 @@
   }
 }
 
-// marketing
+// Home-page Section 1 
 .section-1{
+  padding: 3.5rem 0;
   padding-top: 3rem;
   & .col-lg-4 {
     //margin-top: 1.5rem;
@@ -166,21 +187,9 @@
   }
 }
 
-
-//alpha overlay
-.alpha-overlay{
-  position: absolute;
-  //margin-left: -3rem;
-  margin-top: -3.5rem;
-  width: 100%;
-  height: 350px;
-  display: block;
-  //z-index: 5;
-  background-color: rgba($brand-color1, 0.7);
-}
-
-
+// Home-page Section 2
 .section-2{
+  padding: 3.5rem 0;
   text-align: center;
   background: url('https://www.performdev.com/wp-content/uploads/2016/01/running-corporate-learning.jpg') no-repeat;
   background-size: cover;
@@ -200,16 +209,92 @@
       color: $brand-color6;
     }
   }
+  & .alpha-overlay{
+    position: absolute;
+    margin-top: -3.5rem;
+    width: 100%;
+    height: 350px;
+    display: block;
+    //z-index: 5;
+    background-color: rgba($brand-color1, 0.7);
+  }
 }
 
-
+// Home-page Section 3
 .section-3{
+  padding: 3.5rem 0;
   background-color: $brand-color4;
 }
 
 
+// about-page Section 1 
+.about-section-1{
+  height: 400px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-bottom: thin solid rgba($black, 0.1);
+  overflow: hidden;
+  //background: linear-gradient(0deg, rgba($brand-color4, 0.5), $white);
+  & h2 {
+    font-weight: normal;
+    font-size: ms(3);
+    font-family: 'ralewaybold';
+    margin-top: 5rem;
+  }
+  & p {
+    font-family: 'ralewayregular';
+    font-size: ms(0);
+  }
+  & a.btn{
+    margin-top: 1rem;
+  }
+  & img{
+    position: absolute;
+    width: 800px;
+    //z-index: -1;
+  }
+}
 
 
+// about-page Section 2
+.about-section-2{
+  padding: 3.5rem 50px;
+  span{
+    font-size: ms(3);
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    color: $brand-color1;
+  }
+  & h4 {
+    font-weight: normal;
+    font-size: ms(2);
+    font-family: 'ralewaybold';
+    text-align: center;
+  }
+  & p {
+    font-family: 'ralewayregular';
+    font-size: ms(0);
+    text-align: center;
+  }
+  & ul{
+    list-style: none;
+    display: block;
+    margin-left: 40%;
+    padding-left: 0;
+  }
+}
+
+
+.vertical-nav-skewed{
+  @include parallelogram(800px, 400px, 15deg, rgba($brand-color1, 0.4));
+  //margin: 0 30px;
+  position: absolute;
+  z-index: 2;
+}
+
+
+// footer
 .upper-footer, .bottom-footer{
   padding-top: 2%;
   padding-bottom: 2%;

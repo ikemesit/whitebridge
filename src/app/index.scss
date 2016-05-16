@@ -37,6 +37,18 @@ $brand-color6: #ffbf00;
 
 
 
+// Mixins
+@mixin rectangle($width, $height, $color) {
+  width: $width;
+  height: $height;
+  background: $color;
+}
+
+@mixin parallelogram($width, $height, $skew, $color) {
+  @include rectangle($width, $height, $color);
+  transform: skew($skew);
+}
+
 // Slider buttons
 .unslider-nav ol li {
   width: 10px;
