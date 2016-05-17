@@ -6,22 +6,29 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, webDevTec, toastr, uiGmapGoogleMapApi) {
     var vm = this;
 
-    //var Marker = {"id":1, coords : {"latitude": 5.0135412,"longitude": 7.9459851},"showWindow":true,"show":true};
-
+  
     vm.awesomeThings = [];
     vm.classAnimation = '';
     vm.creationDate = 1463136796626;
     vm.showToastr = showToastr;
+
+    // Map Settings
     vm.map = { center: { latitude: 5.0151090, longitude: 7.9529442 }, zoom: 15};
     vm.options = {draggable: false, scrollwheel: false};
+
+    // Map Marker
     vm.marker = {
       id : 1,
       coords : {"latitude": 5.0151090,"longitude": 7.9539446},
-      options : {icon: 'assets/images/map-marker.png', draggable: false}
+      options : {title: 'Whitebridge Consulting', draggable: false, animation: 1}
     }
+
+    uiGmapGoogleMapApi.then(function(){
+
+    });
 
     activate();
 

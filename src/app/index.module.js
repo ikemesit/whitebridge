@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('whitebridge', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ui.router', 'ui.bootstrap', 'toastr', 'nemLogging']);
+    .module('whitebridge', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ui.router', 'ui.bootstrap', 'toastr', 'uiGmapgoogle-maps']);
 
 })();
