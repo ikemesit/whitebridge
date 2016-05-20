@@ -2,20 +2,35 @@
 .landing-wrap{
   width: 100%;
   height: 100vh;
-  background: url("../assets/images/professional-business-woman.jpg") no-repeat;
-  background-size: cover;
+  // background: url("../assets/images/professional-business-woman.jpg") no-repeat;
+  // background-size: cover;
   box-shadow: inset 0 100vh rgba(#000, 0.4);
   overflow-x: hidden;
   & .container-fluid{
     box-shadow: inset 0 12vh 80px rgba(#000, 0.1);
     padding-left: 0;
     padding-right: 0;
+    overflow-x: hidden;
   }
 
   @include media("<768px"){
     background: url("../assets/images/professional-business-woman.jpg") center center no-repeat;
   }
 }
+
+.vegas{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -10;
+  overflow: hidden;
+}
+
+body .vegas-container{
+  position: absolute !important;
+}
+
+
 // Top Navigation General Styles
 %top-navigation{
   width: 100%;
@@ -69,6 +84,9 @@
 // Home-page Navigation Styling
 .custom-nav{
   @extend %top-navigation;
+  position: absolute;
+  z-index: 5;
+  top: 0;
   & .brand{
     color: #fff;
     & a{
@@ -141,13 +159,16 @@
 
 // Home-page landing content
 .landing-content{
-  margin-top: 30%;
+  margin-top: 20%;
   padding-left: 3rem;
   padding-right: 3rem;
   color: #fff;
+  position: absolute;
+  z-index: 2;
+  top: 50px;
   & h1{
     font-family: 'ralewaybold';
-    font-size: ms(4);
+    font-size: ms(5);
     margin: 0 0 10px 0;
     line-height: 50px;
   }
@@ -165,6 +186,38 @@
     p{
       font-size: ms(1);
     }
+  }
+}
+
+.landing-bottom-bar{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  background-color: rgba($brand-color1, 0.9);
+  bottom: 0;
+  color: $white;
+  padding: 20px 3rem;
+  & h4{
+    font-family: 'ralewaybold';
+    vertical-align: middle;
+    & i{
+      margin-right: 10px;
+    }
+    & span{
+      color: $brand-color6;
+    }
+  }
+  & .livechat{
+    cursor: pointer;
+    &:hover{
+      @include pulse(
+        $duration: 1s,
+        $count: 2,
+        $delay: .2s,
+        $function: ease
+      );
+    }   
   }
 }
 

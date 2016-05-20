@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig, uiGmapGoogleMapApiProvider) {
+  function config($logProvider, toastrConfig) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -16,12 +16,6 @@
     toastrConfig.positionClass = 'toast-top-right';
     toastrConfig.preventDuplicates = true;
     toastrConfig.progressBar = true;
-
-    uiGmapGoogleMapApiProvider.configure({
-      v: '3.20', 
-      libraries: 'weather,geometry,visualization'
-    });
-
   }
 
 })();

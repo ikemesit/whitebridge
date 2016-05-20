@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr, uiGmapGoogleMapApi) {
+  function MainController($timeout, webDevTec, toastr) {
     var vm = this;
 
   
@@ -26,9 +26,6 @@
       options : {title: 'Whitebridge Consulting', draggable: false, animation: 1}
     }
 
-    uiGmapGoogleMapApi.then(function(){
-
-    });
 
     activate();
 
