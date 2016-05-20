@@ -5,7 +5,7 @@
   // background: url("../assets/images/professional-business-woman.jpg") no-repeat;
   // background-size: cover;
   box-shadow: inset 0 100vh rgba(#000, 0.4);
-  overflow-x: hidden;
+  overflow: hidden;
   & .container-fluid{
     box-shadow: inset 0 12vh 80px rgba(#000, 0.1);
     padding-left: 0;
@@ -24,11 +24,15 @@
   position: absolute;
   z-index: -10;
   overflow: hidden;
+ // .vegas-container{
+ //    height: 100vh !important;
+ //    position: absolute !important;
+ //  }
 }
 
-body .vegas-container{
-  position: absolute !important;
-}
+// body .vegas-container{
+//   position: absolute !important;
+// }
 
 
 // Top Navigation General Styles

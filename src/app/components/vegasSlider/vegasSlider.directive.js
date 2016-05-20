@@ -23,14 +23,14 @@
           delay: 7000,
           timer: false,
           shuffle: true,
-          transition: 'fade',
           transitionDuration: 2000,
           slides: [
               { src: 'assets/images/mainSliderImgs/bg1.jpg' },
               { src: 'assets/images/mainSliderImgs/bg2.jpg' },
               { src: 'assets/images/mainSliderImgs/bg3.jpg' },
               { src: 'assets/images/mainSliderImgs/bg4.jpg' }
-          ]
+          ],
+          transition: [ 'fade2', 'zoomOut2', 'swirlLeft2' ]
       });
 		}
       
