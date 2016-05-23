@@ -45,8 +45,9 @@
     font-size: 200%;
     font-family: 'ralewaybold';
     img{
-      max-width: 5rem;
+      max-width: 4rem;
       display: inline-block;
+      margin-top: -20px;
     }
   }
 
@@ -460,6 +461,26 @@
 
 
 
+//Listing Styles
+.listing-header{
+  font-family: 'ralewayextrabold';
+  margin: 2rem 0;
+}
+
+.full-listing{
+  //border-top: thin solid rgba($brand-color1, 0.1);
+  border-bottom: thin solid rgba($brand-color1, 0.1);
+  margin-bottom: 1rem;
+  padding: 2rem 0;
+}
+
+.job-title{
+  font-family: 'ralewaybold';
+}
+.jobbutton{
+  margin-top: 20px;
+}
+
 
 
 // footer
@@ -532,6 +553,67 @@
      }
   }
 }
+
+
+
+//Admin Login Form
+.login-wrap {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+  width: 100vw;
+  height: 100vh;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+//Administrator Panel Styles
+.admin{
+  & .page-title{
+    font-family: 'ralewayextrabold';
+    text-align: center;
+    margin: 2rem auto;
+  }
+
+  & .selector{
+    padding: 2rem auto;
+  }
+}
+
 
 .upper-footer{
   background-color: $brand-color1;

@@ -118,8 +118,17 @@ button.btn, a.btn{
   & .padded{
     padding: 5rem 0;
   }
+
+  & .padded-img{
+    height: 400px;
+    width: 600px;
+    margin: 2rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    // overflow-y: hidden;
+  }
   & img{
-    width: 500px;
+    // min-width: 800px;
   }
 }
 
@@ -138,7 +147,7 @@ button.btn, a.btn{
 } 
 
 .unslider-nav{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 
@@ -200,6 +209,23 @@ button.btn, a.btn{
     padding: 0 5px;
 }
 
+.postingWrap{
+  width: auto;
+  height: auto;
+  display: block;
+  overflow: auto;
+  &:hover{
+    color:$brand-color1;
+    text-decoration: none;
+  }
+}
+
+li.listing:hover{
+  background-color: $brand-color1;
+  & p{
+    color: $white;
+  }
+}
 .img-bordered-primary {
     -webkit-box-shadow: 0 0 0 2px #fff,0 0 0 4px #446CB3;
     box-shadow: 0 0 0 2px #fff,0 0 0 4px #446CB3;

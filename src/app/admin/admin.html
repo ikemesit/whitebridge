@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row admin">
+    <div class="col-sm-12">
+        <h1 class="page-title center-block">Administrator Panel</h1>
+        <hr>
+        <a ui-sref="home" title="" class="center-block" style="text-align: center;">Return to Home</a>
+    </div>
+    <div class="col-sm-offset-2 col-sm-8 selector">
+      <uib-tabset active="activePill" type="pills">
+        <uib-tab index="0" heading="Add a Job Listing">
+          <br><br>
+          <form action="#" method="#" role="form" >
+            <legend>Add a Job Listing</legend>
+          
+            <div class="form-group">
+              <label for="">Job Title</label>
+              <input type="text" class="form-control" id="" placeholder="{{ admin.test.title }}" ng-model="admin.test.title">
+            </div>
+
+            <div class="form-group">
+              <label for="">Job Description</label>
+              <textarea class="form-control" rows="5" placeholder="{{ admin.test.description }}" ng-model="admin.test.description"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="">Desired Qualification</label>
+              <input type="text" class="form-control" id="" placeholder="{{ admin.test.qualifications }}" ng-model="admin.test.qualifications">
+            </div>
+
+            <div class="form-group">
+              <label for="">Desired Years of Experience</label>
+              <select class="form-control">
+                <option>1 Year</option>
+                <option>2 Years</option>
+                <option>3 Years</option>
+                <option>4 Year</option>
+                <option>5 Year</option>
+                <option>5 Years +</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="">Salary Offered</label>
+              <input type="text" class="form-control" id="" placeholder="Input field" ng-model="admin.test.salary">
+            </div>
+
+            <button type="button" class="btn btn-lg brand-btn-success btn-block" ng-click="save();">Submit</button>
+          </form>
+        </uib-tab>
+        <uib-tab heading="Add a Event Listing"></uib-tab>
+      </uib-tabset>
+
+    </div>
+    
+  </div>
+  
+</div>

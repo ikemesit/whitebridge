@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, webDevTec, toastr, testServer) {
     var vm = this;
 
   
@@ -26,11 +26,17 @@
       options : {title: 'Whitebridge Consulting', draggable: false, animation: 1}
     }
 
+    // Test Server
+    //vm.testData = loadTestServer();
+
+    //console.log(vm.testData);
+
 
     activate();
 
     function activate() {
       getWebDevTec();
+      loadTestServer();
       $timeout(function() {
         vm.classAnimation = 'rubberBand';
       }, 4000);
@@ -47,6 +53,10 @@
       angular.forEach(vm.awesomeThings, function(awesomeThing) {
         awesomeThing.rank = Math.random();
       });
+    }
+
+    function loadTestServer(){
+      vm.testData = testServer.getData();
     }
   }
 })();
