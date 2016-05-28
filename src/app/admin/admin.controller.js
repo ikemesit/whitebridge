@@ -6,7 +6,7 @@
     .controller('AdminController', AdminController);
 
   /** @ngInject */
-  function AdminController($timeout, webDevTec, toastr, testServer) {
+  function AdminController($timeout, webDevTec, toastr, apiInterface) {
     var vm = this;
 
   
@@ -14,27 +14,32 @@
     vm.classAnimation = '';
     vm.creationDate = 1463136796626;
     vm.showToastr = showToastr;
-    //vm.testData = loadTestServer();
-    vm.test = {
-		'title': 'NodeJS Developer',
-		'description': 'Ready to make $30,000 USD while working for a fortune 500 company from the comfort of your home? Eager to join a network of the most talented remote workers in the world? If so, this role is for you. Work for Crossover, and you’ll earn the most competitive wages on the market, collaborate with the most skilled teams in your field, and work for the most elite companies in the world. Sound too good to be true? Take a closer look...',
-		'qualifications': [
-          'At least four years of hands-on experience front-end web design, Bachelor’s Degree in Computer Science or related field',
-          'General knowledge of back-end web development from a consumer perspective',
-          'Excellent communication skills (in English)'
-        ],
-		'exp': '4',
-		'salary': '$30,000'
+    vm.jobs = {
+      'title' : 'Title of job offered',
+      'description' : 'Job description',
+      'qualifications' : 'Qualifications desired',
+      'experience' : "Desired years of experience",
+      "salary" : "Salary Offered"
+    };
+    vm.events = {
+      'title' : 'Title of event',
+      'description' : 'Event description',
+      'location' : 'Event location',
+      'date' : "Event date",
+      "fee" : "Event fee"
     };
 
     // Insert record function
-    vm.save = insertTestData();
+    vm.saveJob = function(data){ return saveJobData(data);};
+    vm.saveEvent = function(data){ return saveEventData(data);};
+    
 
-	activate();
+
+    activate();
 
     function activate() {
       getWebDevTec();
-      loadTestServer();
+      //loadTestServer();
       $timeout(function() {
         vm.classAnimation = 'rubberBand';
       }, 4000);
@@ -53,13 +58,17 @@
       });
     }
 	
-	function loadTestServer(){
-		vm.testData = testServer.getData();
+    // function loadTestServer(){
+    //  vm.testData = testServer.getData();
+    // }
+
+    function saveJobData(data){
+        apiInterface.postJobRecord(data);
     }
 
-    function insertTestData(){
-		var newRecordCount = testServer.postData(vm.test);
-		return newRecordCount;
+    function saveEventData(data){
+        apiInterface.postEventRecord(data);
     }
+
   }
 })();

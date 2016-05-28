@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr, testServer) {
+  function MainController($timeout, webDevTec, toastr, apiInterface) {
     var vm = this;
 
   
@@ -26,8 +26,8 @@
       options : {title: 'Whitebridge Consulting', draggable: false, animation: 1}
     }
 
-    // Test Server
-    //vm.testData = loadTestServer();
+    // Get Job Listings
+    //vm.jobData = fetchJobRecords();
 
     //console.log(vm.testData);
 
@@ -36,7 +36,8 @@
 
     function activate() {
       getWebDevTec();
-      loadTestServer();
+      fetchJobRecords();
+      fetchEventRecords();
       $timeout(function() {
         vm.classAnimation = 'rubberBand';
       }, 4000);
@@ -55,8 +56,12 @@
       });
     }
 
-    function loadTestServer(){
-      vm.testData = testServer.getData();
+    function fetchJobRecords(){
+      vm.jobData = apiInterface.getJobRecords();
+    }
+
+    function fetchEventRecords(){
+      vm.eventData = apiInterface.getEventRecords();
     }
   }
 })();

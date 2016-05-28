@@ -1,0 +1,47 @@
+
+      <div class="col-sm-10 selector">
+        <uib-tabset active="activePill" type="pills">
+          <uib-tab index="0" heading="Add a Job Entry">
+            <br><br>
+            <form action="#" method="#" role="form" >
+              <legend>Add a Job Entry</legend>
+            
+              <div class="form-group">
+                <label for="">Job Title</label>
+                <input type="text" class="form-control" id="" placeholder="{{ admin.jobs.title }}" ng-model="admin.jobs.title">
+              </div>
+
+              <div class="form-group">
+                <label for="">Job Description</label>
+                <textarea class="form-control" rows="10" placeholder="{{ admin.jobs.description }}" ng-model="admin.jobs.description"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="">Desired Qualification</label>
+                <input type="text" class="form-control" id="" placeholder="{{ admin.jobs.qualifications }}" ng-model="admin.jobs.qualifications">
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <label for="">Desired Years of Experience</label>
+                    <input type="text" class="form-control" id="" placeholder="{{ admin.jobs.experience }}" ng-model="admin.jobs.experience">
+                  </div>
+
+                  <div class="col-sm-4">
+                    <label for="">Salary Offered</label>
+                    <input type="text" class="form-control" id="" placeholder="{{ admin.jobs.salary }}" ng-model="admin.jobs.salary">
+                  </div>
+                </div>
+               
+              </div>
+
+              <button type="button" class="btn btn-lg brand-btn-success" ng-click="admin.saveJob(admin.jobs)">Save Job Entry</button>
+            </form>
+          </uib-tab>
+          <uib-tab heading="Edit Job Entries"></uib-tab>
+        </uib-tabset>
+
+      </div>
+      
+    

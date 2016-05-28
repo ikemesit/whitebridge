@@ -1,3 +1,14 @@
+<div class="top-bar">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="pull-left"><i class="fa fa-phone fa-lg animated pulse infinite"></i>Call Us today @ <span>08037492675</span></p>
+        <p class="pull-right livechat"><i class="fa fa-comments-o fa-lg"></i> Live Chat</p>
+        <!-- <h4 class="pull-right"><i class="fa fa-facebook-official fa-lg"></i></h4> -->
+      </div>
+    </div>
+  </div>
+</div><!-- /top-bar -->
 <header class="custom-nav-alt">
   <a class="brand" href="#">
     <img src="assets/images/wblogo.svg" alt="">
@@ -33,15 +44,16 @@
         </div>
       </div>
     </section>
-    <section class="featurette-block full-listing" ng-repeat="data in main.testData">
+    <hr>
+    <section class="featurette-block full-listing" ng-repeat="job in main.jobData">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-              <h4 class="job-title">{{ data.title }}</h4>
-              <p class="job-description">{{ data.description }}</p>
-              <p class="qualifications">{{ data.qualifications }}</p>
-              <p class="experience">{{ data.experience }} Years</p>
-              <p class="salary">{{ data.salary }}</p>
+              <h4 class="job-title">{{ job.title }}</h4>
+              <p class="job-description">{{ job.description }}</p>
+              <p class="qualifications">{{ job.qualifications }}</p>
+              <p class="experience">{{ job.experience }}</p>
+              <p class="salary">{{ job.salary }}</p>
               <button type="button" class="btn btn-lg brand-btn-success jobButton">Apply for Job</button>
           </div>
         </div>

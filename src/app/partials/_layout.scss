@@ -1,9 +1,21 @@
+// top-bar
+  .top-bar{
+    width: 100%;
+    height: 6vh;
+    padding: 15px 50px 0 50px;
+    background-color: $brand-color1;
+    color: $white;
+    font-size: ms(0);
+    & .col-sm-12{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
 // Home-page landing viewport wrap 
 .landing-wrap{
   width: 100%;
-  height: 100vh;
-  // background: url("../assets/images/professional-business-woman.jpg") no-repeat;
-  // background-size: cover;
+  height: 94vh;
   box-shadow: inset 0 100vh rgba(#000, 0.4);
   overflow: hidden;
   & .container-fluid{
@@ -62,7 +74,13 @@
 
   & .nav-item{
     display: inline-block;
-    margin-right: 20px;
+    margin-left: 20px;
+    &:last-of-type{
+      margin-right: 0;
+      & a.nav-link{
+        margin-right: 0;
+      }
+    }
   }
 
   & .nav-link{
@@ -91,7 +109,7 @@
   @extend %top-navigation;
   position: absolute;
   z-index: 5;
-  top: 0;
+  top: 6vh;
   & .brand{
     color: #fff;
     & a{
@@ -164,7 +182,7 @@
 
 // Home-page landing content
 .landing-content{
-  margin-top: 20%;
+  margin-top: 25%;
   padding-left: 3rem;
   padding-right: 3rem;
   color: #fff;
@@ -180,11 +198,11 @@
   & p{
     font-family: 'ralewayregular';
     font-size: ms(0);
-    margin: 0 0 20px 0;
+    margin: 20px 0 20px 0;
   }
 
   @include media(">1280px"){
-    margin-top: 15%;
+    margin-top: 20%;
     h1{
       font-size: ms(6);
     }
@@ -554,6 +572,14 @@
   }
 }
 
+.upper-footer{
+  background-color: $brand-color1;
+}
+
+.bottom-footer{
+  background-color: darken($brand-color1, 2%);
+}
+
 
 
 //Admin Login Form
@@ -602,26 +628,65 @@
 
 
 //Administrator Panel Styles
-.admin{
+.admin-sidebar{
+  height: auto;
+  min-height: 100vh;
+  background-color: $brand-color1;
+  color: $white;
   & .page-title{
     font-family: 'ralewayextrabold';
-    text-align: center;
-    margin: 2rem auto;
+    //text-align: center;
+    margin: 20px 0 0 0;
+  }
+  & hr{
+    border: none;
+    border-top: thin solid rgba($white, 0.1);
   }
 
+  & ul{
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0 auto 0;
+    display: block;
+    line-height: ms(3);
+    & li a{
+      color: $white;
+      font-family: 'ralewaybold';
+      display: block;
+      font-size: 14px;
+      transition: color 0.2s ease;
+      &:hover{
+        text-decoration: none;
+        color: $brand-color6;
+      }
+      &:active{
+        text-decoration: none;
+        color: $brand-color6;
+      }
+      &:focus{
+        text-decoration: none;
+        color: $brand-color6;
+      }
+    }
+
+    & span{
+      margin-right: 10px;
+    }
+  }
+}
+.admin-content{
   & .selector{
-    padding: 2rem auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  & legend{
+    font-family: 'ralewaybold';
   }
 }
 
 
-.upper-footer{
-  background-color: $brand-color1;
-}
 
-.bottom-footer{
-  background-color: darken($brand-color1, 2%);
-}
 
 
 
