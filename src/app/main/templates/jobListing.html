@@ -16,26 +16,29 @@
   </a>
   <ul class="nav-links pull-right">
     <li class="nav-item">
-      <a class="nav-link" href="#/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link" ui-sref="home">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" ui-sref="about">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" ui-sref="services">Our Services</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="#/about-us">About Us</a>
+      <a class="nav-link" ui-sref="jobs">jobs</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#/our-services">Our Services</a>
+      <a class="nav-link" ui-sref="events">Events</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#/jobs">jobs</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#/contact-us">Contact Us</a>
+      <a class="nav-link" ui-sref="contact">Contact Us</a>
     </li>
   </ul>
 </header>
 
-
+  <div class="listing-padding-fix">
     <section class="featurette-block">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12">
             <h1 class="listing-header">Job Listings</h1>
@@ -46,7 +49,7 @@
     </section>
     <hr>
     <section class="featurette-block full-listing" ng-repeat="job in main.jobData">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12">
               <h4 class="job-title">{{ job.title }}</h4>
@@ -60,11 +63,12 @@
       </div>
       
     </section>
+  </div><!-- listing-padding-fix -->
 
 
 
 <div class="upper-footer">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-sm-3">
         <h4>Whitebridge Consulting</h4>
@@ -99,7 +103,7 @@
   </div><!-- End of container -->
 </div><!-- End of upper-footer -->
 <div class="bottom-footer">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-sm-12">
         <p>Copyright &copy; 2016. Whitebridge Consulting </p>

@@ -10,42 +10,42 @@
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/main/main.html',
+        templateUrl: 'app/main/templates/main.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
 
       .state('about', {
         url: '/about-us',
-        templateUrl: 'app/main/about.html',
+        templateUrl: 'app/main/templates/about.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
 
       .state('services', {
         url: '/our-services',
-        templateUrl: 'app/main/services.html',
+        templateUrl: 'app/main/templates/services.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
 
       .state('contact', {
         url: '/contact-us',
-        templateUrl: 'app/main/contact.html',
+        templateUrl: 'app/main/templates/contact.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
 
       .state('jobs', {
         url: '/jobs',
-        templateUrl: 'app/main/jobListing.html',
+        templateUrl: 'app/main/templates/jobListing.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
 
       .state('events', {
         url: '/events',
-        templateUrl: 'app/main/eventListing.html',
+        templateUrl: 'app/main/templates/eventListing.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
