@@ -1,14 +1,13 @@
-<div class="top-bar">
+<!-- <div class="top-bar">
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-12">
         <p class="pull-left"><i class="fa fa-phone fa-lg animated pulse infinite"></i>Call Us today @ <span>08037492675</span></p>
         <p class="pull-right livechat"><i class="fa fa-comments-o fa-lg"></i> Live Chat</p>
-        <!-- <h4 class="pull-right"><i class="fa fa-facebook-official fa-lg"></i></h4> -->
       </div>
     </div>
   </div>
-</div><!-- /top-bar -->
+</div> --><!-- /top-bar -->
 <header class="custom-nav-alt">
   <a class="brand" href="#">
     <img src="assets/images/wblogo.svg" alt="">
@@ -42,8 +41,10 @@
     <div class="row">
       <div class="col-md-7">
         <h2>About Us</h2>
-        <hr>
-        <p>At White bridge global consulting limited we understand that people are the core of any organisation. Our clients include both professionals &amp; organisations. We understand that at the core of any successful organisation lies a competent workforce, that is why We specialize in identifying &amp; matching professionals to the right Jobs in the right environments. Our clients enjoy high performance from the highly motivated employees we recommend,leading to sustainable growth. To achieve this we equip professionals with the right skill set through our learning &amp; development programs.</p>
+        <!-- <hr> -->
+        <p>At White bridge global consulting limited we understand that people are the core of any organisation. Our clients include both professionals &amp; organisations. We understand that at the core of any successful organisation lies a competent workforce, that is why We specialize in identifying &amp; matching professionals to the right Jobs in the right environments.</p>
+
+        <p>Our clients enjoy high performance from the highly motivated employees we recommend,leading to sustainable growth. To achieve this we equip professionals with the right skill set through our learning &amp; development programs.</p>
  
         <p>Our unlimited enthusiasm translates to the stellar delivery of our services from engagement to execution. Our emphasis on teamwork &amp; mutual respect bodes with our clients &amp; stakeholders alike generating the synergy needed to achieve strategic HR goals &amp; objectives.</p>
  
@@ -60,7 +61,7 @@
 </section>
 
 
-<section class="featurette-block about-section-2">
+<section class="about-section-2">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4">
@@ -82,31 +83,42 @@
 			<li><strong>T</strong>- Teamwork</li>
 			<li><strong>P</strong>- Passion</li>
         </ul>
-      </div><!-- /.col-md-3 -->
-      <!-- <div class="col-md-3">
-      	<span class="glyphicon glyphicon-pushpin"></span>
-        <h2>Our Objectives</h2>
-        <ul>
-        	<li>To constantly render outstanding service to our clients all through the engagement/execution processes. We bask in client’s delight.</li>
-        	<li>To undertake every task with transparency permeating every stage/process in satisfying our clientele. This is so important to us that it formed the basis of our very existence &amp; name; White.</li>
-			<li>To emphasize teamwork &amp; mutual respect within our organization &amp; to achieve synergy with clients &amp; stakeholders.</li>
-			<li>Our unlimited enthusiasm translates to our passionate service delivery to our clients first time, every time.</li>
-        </ul>
-      </div> --><!-- /.col-md-3 -->
-      
+      </div><!-- /.col-md-4 -->
     </div><!-- /.row -->
   </div>
 </section>
 
 
-<!-- <section class="featurette-block about-section-3">
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</section> -->
+<section class="about-section-3">
+        
+    <div class="container">
+      <div class="center-heading">
+          <h2>Our Facilitators</h2>
+          <span class="center-line"></span>
+      </div> 
+
+      <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+              <div class="row">
+                  <div class="col-sm-4 margin40" ng-repeat="facilitator in main.facilitatorsSubData">
+                      <div class="item-img-wrap ">
+                          <img ng-src="{{ facilitator.imageUrl }}" class="img-responsive" alt="workimg">
+                          <div class="item-img-overlay">
+                              <a href="#" ng-click="$event.preventDefault(); main.grabSelected(facilitator); main.openModal('lg'); ">
+                                  <span></span>
+                              </a>
+                          </div>
+                      </div> 
+                      <div class="work-desc">
+                          <h4><a>{{ facilitator.name }}</a></h4>
+                          <!-- <span>{{ facilitator.qualifications }} </span> -->
+                      </div><!--work desc-->
+                  </div><!--facilitator col end-->
+              </div><!--speakers row end-->
+          </div>
+      </div>
+    </div>
+</section>
 
 
 <div class="upper-footer">
