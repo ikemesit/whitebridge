@@ -139,6 +139,8 @@
 // Other Pages Navigation Styling
 .custom-nav-alt{
   @extend %top-navigation;
+  position: fixed;
+  z-index: 150;
   background-color: $white;
   border-bottom: thin solid rgba($black, 0.2);
   & .brand{
@@ -187,7 +189,7 @@
     line-height: 50px;
   }
   & p{
-    font-family: 'ralewayregular';
+    font-family: 'latolight';
     font-size: ms(0);
     margin: 20px 0 20px 0;
   }
@@ -316,54 +318,111 @@
 .section-3{
   padding: 3.5rem 0;
   background-color: $brand-color4;
+}    
+
+// Page Title Styles
+.page-title{
+  height: 40vh;
+  width: 100%;
+  background-size: cover;
+  box-shadow: inset 0 40vh rgba($brand-color1, 0.6);
+  color: rgba($white, 0.7);
+  padding-top: 20vh;
+  transition: all 0.3s ease-in;
+  & hr{
+    width: 200px;
+    margin-top: 10px;
+    border: thin solid rgba($white, 0.7); 
+    transition: width 0.3s ease-in;
+  }
+  & i{
+    text-align: center;
+    @include center-block;
+  }
+  & h2{
+    text-align: center;
+    @include center-block;
+    font-family: 'ralewaybold';
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: ms(4);
+  }
+
+  &:hover{
+    color: $white;
+    box-shadow: inset 0 40vh rgba($brand-color1, 0.8);
+    & hr{
+      width: 150px;
+    }    
+  } 
 }
 
+.about-img-header{
+  background: url('../assets/images/city-skyline3.jpg') no-repeat center center fixed;
+}
+
+.services-img-header{
+  background: url('../assets/images/city-skyline1.jpg') no-repeat center center fixed;
+}
 
 // about-page Section 1 
 .about-section-1{
-  height: 400px;
-  padding-left: 50px;
+  height: auto;
+  //padding-left: 50px;
   //padding-right: 50px;
-  border-bottom: thin solid rgba($black, 0.1);
-  overflow: hidden;
-  //background: linear-gradient(0deg, rgba($brand-color4, 0.5), $white);
+  padding: 5rem 0;
+  & .intro-quote{
+    font-family: 'gentium_book_basicitalic';
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 0;
+  }
   & h2 {
     font-weight: normal;
     font-size: ms(3);
     font-family: 'ralewaybold';
-    margin-top: 2rem;
+    //margin-top: 2rem;
+    text-align: center;
   }
   & p {
     font-family: 'ralewayregular';
     font-size: ms(0);
-    line-height: 24px;
+    // line-height: 24px;
+    text-align: center;
+    // margin-top: 2rem;
   }
   & a.btn{
     margin-top: 1rem;
   }
-  & img{
-    position: absolute;
-    width: 800px;
-    //z-index: -1;
+
+  & .image-wrap{
+    width: auto;
+    height: 500px;
+    overflow-y: hidden;
   }
 
-  & .vertical-nav-skewed{
-    @include parallelogram(800px, 400px, 15deg, rgba($brand-color1, 0.4));
-    position: absolute;
-    z-index: 2;
+   & hr{
+    width: 200px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: thin solid $brand-color1; //thin solid rgba($white, 0.7); 
+    transition: width 0.3s ease-in;
   }
 }
 
 
 // about-page Section 2
 .about-section-2{
+  background: url('../assets/images/city-skyline3.jpg') no-repeat center center fixed;
+  box-shadow: inset 0 50vh rgba($brand-color1, 0.8);
   padding: 3.5rem 50px;
+  color: $white;
   span{
     font-size: ms(3);
     text-align: center;
     display: block;
     margin: 0 auto;
-    color: $brand-color1;
+    color: $white;
   }
   & h4 {
     font-weight: normal;
@@ -375,6 +434,7 @@
     font-family: 'ralewayregular';
     font-size: ms(0);
     text-align: center;
+    text-shadow: 0px 0px 10px rgba($brand-color1, 0.9);
   }
   & ul{
     list-style: none;
@@ -473,6 +533,9 @@
 
 
 //Listing Styles
+.page-stretch{
+  min-height: 50vh;
+}
 .listing-padding-fix{
   width: 100%;
   margin: 0;
@@ -485,17 +548,77 @@
 }
 
 .full-listing{
-  //border-top: thin solid rgba($brand-color1, 0.1);
-  border-bottom: thin solid rgba($brand-color1, 0.1);
-  margin-bottom: 1rem;
-  padding: 2rem 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
 }
 
-.job-title{
+
+
+.listing-preview{
+  background-color: #eee;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease;
+  &:hover{
+    background-color: $brand-color6;
+  }
+}
+
+.ng-hide-add{
+  // transition: all 2s ease;
+  @include fadeOut(
+    $duration: 0s,
+    $function: ease
+  );
+}
+
+.ng-hide-add-remove{
+  // transition: all 2s ease;
+   @include fadeOut(
+    $duration: 0s,
+    $function: ease
+  );
+}
+
+.ng-hide-add-active,
+.ng-hide-remove-active {
+  transition: all 0s ease;
+}
+
+.full-listing-details{
+  padding-left: 20px;
+  border-left: thick solid #eee;
+  margin-bottom: 20px;
+}
+
+.job-title, .salary{
   font-family: 'ralewaybold';
 }
-.jobbutton{
-  margin-top: 20px;
+
+.job-button{
+  margin-top: 10px;
+}
+
+.side-info-panel{
+  padding: 20px;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  color: $white;
+  border-radius: 6px;
+  background-color: $brand-color2;
+  & h4{
+    font-family: 'ralewaybold';
+  }
+  & .email{
+    font-family: 'ralewaybold';
+    text-transform: italic;
+  }
 }
 
 

@@ -41,22 +41,37 @@
         <div class="row">
           <div class="col-sm-12">
             <h1 class="listing-header">Job Listings</h1>
-            <!-- <hr> -->
+            <hr>
           </div>
         </div>
       </div>
     </section>
-    <hr>
-    <section class="featurette-block full-listing" ng-repeat="job in main.jobData">
+  <!--   <hr> -->
+    <section class="featurette-block page-stretch">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-12">
-              <h4 class="job-title">{{ job.title }}</h4>
-              <p class="job-description">{{ job.description }}</p>
-              <p class="qualifications">{{ job.qualifications }}</p>
-              <p class="experience">{{ job.experience }}</p>
-              <p class="salary">{{ job.salary }}</p>
-              <button type="button" class="btn btn-lg brand-btn-success jobButton">Apply for Job</button>
+          <div class="col-sm-9">
+              <div class="full-listing" ng-repeat="job in main.jobData track by $index">
+                <div class="listing-preview" ng-hide="main.hidden == $index" ng-click="main.hidden = $index">
+                  <h4 class="job-title pull-left">{{ job.title}}</h4>
+                  <h4 class="salary pull-right">{{ job.salary }}</h4>
+                </div>
+                <div class="full-listing-details clearfix" ng-show="main.hidden == $index" ng-click="main.hidden = undefined">
+                  <h4 class="job-title">{{ job.title }}</h4>
+                  <p class="job-description">{{ job.description }}</p>
+                  <p class="qualifications">{{ job.qualifications }}</p>
+                  <p class="experience">{{ job.experience }}</p>
+                  <p class="salary">{{ job.salary }}</p>
+                  <button type="button" class="btn btn-lg brand-btn-success pull-right job-button" ng-click="$event.stopPropagation(); main.openJobForm();">Apply for Job</button>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="side-info-panel">
+              <h4>Questions?</h4>
+              <p>Have questions or want looking to recruit? contact us at:</p>
+              <p class="email">recruitment@whitebridgeconsult.com</p>
+            </div>
           </div>
         </div>
       </div>

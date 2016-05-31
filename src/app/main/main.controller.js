@@ -26,6 +26,9 @@
       options : {title: 'Whitebridge Consulting', draggable: false, animation: 1}
     };
 
+    vm.hidden = undefined;
+    vm.toggleListing = function(){return toggleListing(); }
+
 
     // $uibModal options
     vm.openModal = function (size){ openModalBox(size);};
@@ -72,6 +75,10 @@
     // Get selected data to pass to modal
     vm.facilitatorData=[];
     vm.grabSelected = function(data){ grabSelected(data);};
+
+
+    // Open registration form modal
+    vm.openJobForm = function(){ openJobForm(); };
 
   
     activate();
@@ -131,6 +138,25 @@
     function grabSelected(data){
       vm.facilitatorData = [];
       vm.facilitatorData.push(data);
+    }
+
+    function toggleListing(){
+      vm.hidden = !vm.hidden;
+    }
+
+    function openJobForm(){
+      $uibModal.open({
+        animation: true,
+        templateUrl: 'app/components/jobform/templates/jobFormContent.html',
+        controller: 'JobFormController',
+        controllerAs: 'jobform',
+        size: 'lg'
+        // resolve: {
+        //   items: function () {
+        //     return vm.facilitatorData; //vm.facilitatorsSubData;
+        //   }
+        // }
+      });
     }
 
     

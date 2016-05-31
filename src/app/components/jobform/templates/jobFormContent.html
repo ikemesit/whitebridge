@@ -1,0 +1,40 @@
+
+    <div class="modal-header">
+        <h3 class="modal-title" >Job Application Form</h3>
+        <p></p>
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" id="" placeholder="Full Name" ng-model="jobform.applicant.name">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="">Date of Birth</label>
+                        <input type="text" class="form-control" id="" placeholder="Date of birth" ng-model="jobform.applicant.dob">
+                    </div> 
+                    <div class="col-sm-6">
+                        
+                    </div> 
+                </div>
+            </div>
+        
+            
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="button" class="btn brand-btn-success btn-lg" ng-click="jobform.submitForm(jobform.applicant);">Submit</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    <!-- <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div> -->
