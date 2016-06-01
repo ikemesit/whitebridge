@@ -342,10 +342,18 @@
   & h2{
     text-align: center;
     @include center-block;
-    font-family: 'ralewaybold';
+    font-family: 'ralewaythin';
     margin-top: 0;
     margin-bottom: 0;
-    font-size: ms(4);
+    font-size: ms(3);
+  }
+
+  & .inner-wrap{
+    min-width: 250px;
+    max-width: 300px;
+    padding: 20px;
+    border: thin solid rgba($white, 0.7);
+    @include center-block;
   }
 
   &:hover{
@@ -353,6 +361,10 @@
     box-shadow: inset 0 40vh rgba($brand-color1, 0.8);
     & hr{
       width: 150px;
+    }
+
+    & .inner-wrap{
+      border: thin solid $white;
     }    
   } 
 }
@@ -368,8 +380,6 @@
 // about-page Section 1 
 .about-section-1{
   height: auto;
-  //padding-left: 50px;
-  //padding-right: 50px;
   padding: 5rem 0;
   & .intro-quote{
     font-family: 'gentium_book_basicitalic';
@@ -406,7 +416,7 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     border: thin solid $brand-color1; //thin solid rgba($white, 0.7); 
-    transition: width 0.3s ease-in;
+    // transition: width 0.3s ease-in;
   }
 }
 
@@ -449,8 +459,17 @@
 // services-page Section 1 
 .service-section-1{
   height: auto;
-  padding: 0 50px 3.5rem 50px;
-  border-bottom: thin solid rgba($black, 0.1);
+  // padding: 0 50px 3.5rem 50px;
+  // border-bottom: thin solid rgba($black, 0.1);
+  padding: 5rem 0;
+  & .intro-quote{
+    font-family: 'gentium_book_basicitalic';
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    color: $brand-color1;
+  }
+
   & h2 {
     font-weight: normal;
     font-size: ms(3);
@@ -459,47 +478,103 @@
   & p {
     font-family: 'ralewayregular';
     font-size: ms(0);
+    text-align: center;
+  }
+  & hr{
+    width: 200px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: thin solid $brand-color1; //thin solid rgba($white, 0.7); 
   }
 }
 
 
 // Services-page section 2
 .service-section-2{
-  height: auto;
-  border-bottom: thin solid rgba($black, 0.1);
-  & .col-md-6{
-    text-align: center;
-  }
-  & h4 {
-    font-weight: normal;
-    font-size: ms(2);
-    font-family: 'ralewaybold';
-  }
-  & p {
-    font-family: 'ralewayregular';
-    font-size: ms(0);
+   height: auto;
+ 
+  & hr.custom{
+    width: 200px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: thin solid $brand-color1; //thin solid rgba($white, 0.7); 
   }
 
-  & .padded{
-    padding: 1rem 50px;
+  
+  .nav-tabs > li > a{
+    font-family: 'ralewaybold';
+  }
+  .nav-tabs > li.active > a{
+    color: $white;
+    background-color: #5C86A5;
+    border: thin solid #5C86A5;
+    font-family: 'ralewaybold';
+    &:active{
+      border-bottom: thin solid #5C86A5;
+    }
+    &:hover{
+      border-bottom: thin solid #5C86A5;
+    }
+  }
+  .tab-content{
+
+    background-color: #5C86A5;
+    color: $white;
+    padding: 20px;
+    min-height: 500px;
+    margin-bottom: 2rem;
+    text-align: center;
+    & .overlay{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 2000;
+    }
+    & .intro-quote{
+        font-family: 'gentium_book_basicitalic';
+        text-align: center;
+        margin-bottom: 2rem;
+        margin-top: 3rem;
+        color: $white;
+    }
+    & hr{
+      width: 200px;
+      margin: 2rem auto;
+    }
+
+    & .image-left{
+      display: inline-block;
+      width: 45%;
+      height: 60vh;
+      float: left;
+      background: url('../assets/images/city-skyline1.jpg') no-repeat center center;
+      background-size: cover;
+      border: thick solid $white;
+    }
+
+    & .writeup-right{
+      display: inline-block;
+      float: right;
+      width: 50%;
+      height: auto;
+    }
   }
 
   & img{
-    display: block;
-    width: 100px;
-    margin: 0 auto 20px auto;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px
   }
-
-  & .col-md-12{
-    & h4{
-      margin-bottom: 20px;
-    }
-  }
-  @include media(">1280px"){
-    & .padded{
-      padding: 1.5rem 50px;
-    }
-  }
+  // @include media(">1280px"){
+  //   & .padded{
+  //     padding: 2.5rem 50px;
+  //   }
+  //   & img{
+  //     width: 100%;
+  //     height: 400px;
+  //     // margin-top: 20px
+  //   }
+  // }
 }
 
 // Angular Map Styles

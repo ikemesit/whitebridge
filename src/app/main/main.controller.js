@@ -80,6 +80,9 @@
     // Open registration form modal
     vm.openJobForm = function(){ openJobForm(); };
 
+    // Fire tab content animation
+    vm.showTabContent = function(data){ showTabContent(data); };
+
   
     activate();
 
@@ -151,16 +154,15 @@
         controller: 'JobFormController',
         controllerAs: 'jobform',
         size: 'lg'
-        // resolve: {
-        //   items: function () {
-        //     return vm.facilitatorData; //vm.facilitatorsSubData;
-        //   }
-        // }
       });
     }
 
-    
 
+    function showTabContent(data){
+        var selectedTab = angular.element(document).data("index", data);
+            // activeTab = selectedTab
+        $log.info(selectedTab);
+    }
 
 
   }
