@@ -27,11 +27,11 @@
     };
 
     vm.hidden = undefined;
-    vm.toggleListing = function(){return toggleListing(); }
+    vm.toggleListing = toggleListing;
 
 
     // $uibModal options
-    vm.openModal = function (size){ openModalBox(size);};
+    vm.openModal = openModalBox;
 
     // Facilitators sub data - #Refactor
     vm.facilitatorsSubData = [
@@ -74,14 +74,14 @@
 
     // Get selected data to pass to modal
     vm.facilitatorData=[];
-    vm.grabSelected = function(data){ grabSelected(data);};
+    vm.grabSelected = grabSelected;
 
 
     // Open job registration form modal
-    vm.openJobForm = function(){ openJobForm(); };
+    vm.openJobForm = openJobForm;
 
     // Open eventregistration form modal
-    vm.openEventForm = function(){ openEventForm(); };
+    vm.openEventForm = openEventForm;
 
     // Fire tab content animation
     vm.showTabContent = function(data){ showTabContent(data); }; //FIXME: Get tab animation to work

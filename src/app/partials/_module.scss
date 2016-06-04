@@ -46,22 +46,22 @@ button.btn, a.btn{
 
 
 .brand-btn-warn{
-  border: thin solid $brand-color2;
-  color: $brand-color2;
+  border: thin solid $brand-color5;
+  color: $brand-color5;
   transition: all 0.2s ease-in;
   &:hover{
     color: $white;
-    background-color: $brand-color2;
+    background-color: $brand-color5;
   }
 
   &:active{
     color: $white;
-    background-color: $brand-color2;
+    background-color: $brand-color5;
   }
 
   &:focus{
     color: $white;
-    background-color: $brand-color2;
+    background-color: $brand-color5;
   }
 }
 

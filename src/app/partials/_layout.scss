@@ -893,8 +893,59 @@
     padding-bottom: 20px;
   }
 
+  & ul.nav{
+    background-color: $brand-color2;
+    margin-bottom: 20px;
+    & li:hover{
+      background-color: $brand-color1;
+    }
+    & li a{
+      border-radius: 0px;
+      font-family: 'ralewaybold';
+      color: $white;
+      &:active{
+        color:$brand-color6;
+      }
+      &:focus{
+        color:$brand-color6;
+      }
+      &:hover{
+        color:$brand-color6;
+        background-color: $brand-color2;
+      }
+    }
+  }
+
   & legend{
     font-family: 'ralewaybold';
+  }
+
+  & .job-edit-list{
+    list-style: none;
+    padding-left: 0;
+    & li{
+      // width: 100%;
+      @include clearfix;
+      border: thin solid lighten($black, 80%);
+      padding: 10px 0 10px 10px;
+      transition: all 0.3s ease;
+      margin-bottom: 5px;
+      &:hover{
+        background-color: $brand-color4;
+        cursor: pointer;
+        border: $brand-color4;
+      }
+      & a{
+        text-decoration: none;
+        font-family: 'ralewaybold';
+        &:hover{
+          color: $white;
+        }
+      }
+      & button{
+        margin-right: 20px;
+      }
+    }
   }
 }
 
