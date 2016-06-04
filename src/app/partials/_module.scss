@@ -410,10 +410,11 @@ li.listing:hover{
 // Modal Styles
 .modal-header{
   font-family: 'ralewaybold';
-  background-color: #449D44; 
-  color: $white;
+  background-color: darken($white, 10%); //#449D44; 
+  border-bottom: thick solid $brand-color2;
+  color: $brand-color2; //$white;
   & h3{
-    font-size: ms(3);
+    font-size: ms(2);
   }
   & p{
     font-family: 'ralewayregular';
@@ -424,4 +425,13 @@ li.listing:hover{
 
 .modal-body{
   //line-height: ms(2);
+  input{
+    //border: thick solid $brand-color4;
+    outline: none;
+    box-shadow: none;
+    &:active{
+      outline: none;
+      box-shadow: none;
+    }
+  }
 }

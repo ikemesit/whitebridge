@@ -77,11 +77,14 @@
     vm.grabSelected = function(data){ grabSelected(data);};
 
 
-    // Open registration form modal
+    // Open job registration form modal
     vm.openJobForm = function(){ openJobForm(); };
 
+    // Open eventregistration form modal
+    vm.openEventForm = function(){ openEventForm(); };
+
     // Fire tab content animation
-    vm.showTabContent = function(data){ showTabContent(data); };
+    vm.showTabContent = function(data){ showTabContent(data); }; //FIXME: Get tab animation to work
 
   
     activate();
@@ -153,6 +156,16 @@
         templateUrl: 'app/components/jobform/templates/jobFormContent.html',
         controller: 'JobFormController',
         controllerAs: 'jobform',
+        size: 'lg'
+      });
+    }
+
+    function openEventForm(){
+      $uibModal.open({
+        animation: true,
+        templateUrl: 'app/components/eventform/templates/eventFormContent.html',
+        controller: 'EventFormController',
+        controllerAs: 'eventform',
         size: 'lg'
       });
     }

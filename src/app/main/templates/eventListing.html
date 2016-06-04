@@ -1,13 +1,3 @@
-<!-- <div class="top-bar">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12">
-        <p class="pull-left"><i class="fa fa-phone fa-lg animated pulse infinite"></i>Call Us today @ <span>08037492675</span></p>
-        <p class="pull-right livechat"><i class="fa fa-comments-o fa-lg"></i> Live Chat</p>
-      </div>
-    </div>
-  </div>
-</div> --><!-- /top-bar -->
 <header class="custom-nav-alt">
   <a class="brand" href="#">
     <img src="assets/images/wblogo.svg" alt="">
@@ -41,22 +31,37 @@
         <div class="row">
           <div class="col-sm-12">
             <h1 class="listing-header">Upcoming Events</h1>
-            <!-- <hr> -->
+            <hr>
           </div>
         </div>
       </div>
     </section>
-    <hr>
-    <section class="featurette-block full-listing" ng-repeat="event in main.eventData">
+    <!-- <hr> -->
+    <section class="featurette-block page-stretch">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-12">
-              <h4 class="job-title">{{ event.title }}</h4>
-              <p class="job-description">{{ event.description }}</p>
-              <p class="qualifications">{{ event.location }}</p>
-              <p class="experience">{{ event.date }}</p>
-              <p class="salary">&#8358; {{ event.fee }}</p>
-              <button type="button" class="btn btn-lg brand-btn-success jobButton">Register for Event</button>
+          <div class="col-sm-8">
+              <div class="full-listing" ng-repeat="event in main.eventData track by $index">
+                <div class="listing-preview" ng-hide="main.hidden == $index" ng-click="main.hidden = $index">
+                  <h4 class="job-title pull-left">{{ event.title}}</h4>
+                  <h4 class="salary pull-right">{{ event.location }}</h4>
+                </div>
+                <div class="full-listing-details clearfix" ng-show="main.hidden == $index" ng-click="main.hidden = undefined">
+                  <h4 class="job-title">{{ event.title }}</h4>
+                  <p class="job-description">{{ event.description }}</p>
+                  <p class="qualifications">{{ event.location }}</p>
+                  <p class="experience">{{ event.date }}</p>
+                  <p class="salary">&#8358; {{ event.fee }}</p>
+                  <button type="button" class="btn btn-lg brand-btn-success pull-right job-button" ng-click="$event.stopPropagation(); main.openEventForm();">Register for Event</button>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="side-info-panel">
+              <h4>Questions?</h4>
+              <p>Have questions or want looking to recruit? contact us at:</p>
+              <p class="email">recruitment@whitebridgeconsult.com</p>
+            </div>
           </div>
         </div>
       </div>

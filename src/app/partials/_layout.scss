@@ -459,9 +459,7 @@
 // services-page Section 1 
 .service-section-1{
   height: auto;
-  // padding: 0 50px 3.5rem 50px;
-  // border-bottom: thin solid rgba($black, 0.1);
-  padding: 5rem 0;
+  padding: 4rem 0;
   & .intro-quote{
     font-family: 'gentium_book_basicitalic';
     text-align: center;
@@ -486,6 +484,11 @@
     margin-bottom: 2rem;
     border: thin solid $brand-color1; //thin solid rgba($white, 0.7); 
   }
+
+  @include media(">1280px"){
+    padding: 5rem 0;
+
+  }
 }
 
 
@@ -503,24 +506,31 @@
   
   .nav-tabs > li > a{
     font-family: 'ralewaybold';
+    border-bottom: none;
+    transition: all 0.2s ease;
+    &:hover{
+      background-color: $brand-color2;
+      color:$white;
+      border-bottom: none;
+    }
   }
   .nav-tabs > li.active > a{
     color: $white;
-    background-color: #5C86A5;
-    border: thin solid #5C86A5;
+    background-color: $brand-color1; //#5C86A5;
+    border: thin solid $brand-color1; //#5C86A5;
     font-family: 'ralewaybold';
     &:active{
-      border-bottom: thin solid #5C86A5;
+      border-bottom: thin solid $brand-color1; //#5C86A5;
     }
     &:hover{
-      border-bottom: thin solid #5C86A5;
+      border-bottom: thin solid $brand-color1; //#5C86A5;
     }
   }
   .tab-content{
 
-    background-color: #5C86A5;
+    background-color: $brand-color1; //#5C86A5;
     color: $white;
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
     min-height: 500px;
     margin-bottom: 2rem;
     text-align: center;
@@ -552,29 +562,31 @@
       border: thick solid $white;
     }
 
+    & .image-right{
+      display: inline-block;
+      width: 45%;
+      height: 60vh;
+      float: right;
+      background: url('../assets/images/city-skyline1.jpg') no-repeat center center;
+      background-size: cover;
+      border: thick solid $white;
+    }
+
     & .writeup-right{
       display: inline-block;
       float: right;
       width: 50%;
       height: auto;
     }
+
+    & .writeup-left{
+      display: inline-block;
+      float: left;
+      width: 50%;
+      height: auto;
+    }
   }
 
-  & img{
-    width: 100%;
-    height: 100%;
-    margin-top: 20px
-  }
-  // @include media(">1280px"){
-  //   & .padded{
-  //     padding: 2.5rem 50px;
-  //   }
-  //   & img{
-  //     width: 100%;
-  //     height: 400px;
-  //     // margin-top: 20px
-  //   }
-  // }
 }
 
 // Angular Map Styles
@@ -612,8 +624,11 @@
   min-height: 50vh;
 }
 .listing-padding-fix{
+  padding-top: 100px;
   width: 100%;
-  margin: 0;
+  height: auto;
+  overflow: auto;
+  // margin: 0;
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -831,7 +846,7 @@
   min-height: 100vh;
   background-color: $brand-color1;
   color: $white;
-  & .page-title{
+  & .admin-page-title{
     font-family: 'ralewayextrabold';
     //text-align: center;
     margin: 20px 0 0 0;
