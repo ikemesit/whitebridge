@@ -8,13 +8,7 @@
   /** @ngInject */
   function AdminController($timeout, webDevTec, toastr, apiInterface) {
     var vm = this;
-    vm.jobEdited = {
-      'title' : 'Title of job offered',
-      'description' : 'Job description',
-      'qualifications' : 'Qualifications desired',
-      'experience' : "Desired years of experience",
-      "salary" : "Salary Offered"
-    };
+    vm.jobEdited = [];
 
     vm.jobs = [{
       'title' : 'Title of job offered',
@@ -58,7 +52,7 @@
 
     function editJob(data){
       vm.editFormVisible = true;
-      vm.jobEdited = data;
+      vm.jobEdited.push(data);
     }
 
     function saveEdit(data){
