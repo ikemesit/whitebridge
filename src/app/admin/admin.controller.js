@@ -6,43 +6,84 @@
     .controller('AdminController', AdminController);
 
   /** @ngInject */
-  function AdminController($timeout, webDevTec, toastr, apiInterface) {
+  function AdminController($timeout, $log, apiInterface) {
     var vm = this;
-    vm.jobEdited = [];
 
-    vm.jobs = [{
-      'title' : 'Title of job offered',
-      'description' : 'Job description',
-      'qualifications' : 'Qualifications desired',
-      'experience' : "Desired years of experience",
-      "salary" : "Salary Offered"
-    }];
-    vm.events = {
-      'title' : 'Title of event',
-      'description' : 'Event description',
-      'location' : 'Event location',
-      'date' : "Event date",
-      "fee" : "Event fee"
-    };
-    vm.saveEdit = saveEdit;
-    vm.editJob = editJob;
+    // Jobs collection from API
+    vm.jobs = [];
+    // Job object edited
+    vm.jobEdited = {};
+    // New Job object to add
+    vm.job = {};
 
-    // Insert record function
-    vm.saveJob = saveJobData;
-    vm.saveEvent = saveEventData;
+    // Events collection from API
+    vm.events = {};
+    // Event object edited
+    vm.eventEdited = {};
+    // New Event Object to add
+    vm.event = {};
     
 
-    getJobData();
+    // Job related functions
+    vm.saveJobEdit = saveJobEdit;
+    vm.editJob = editJob;
+    vm.saveJob = saveJobData;
+    vm.deleteJob = deleteJob;
 
+    // Event related functions
+    vm.saveEvent = saveEventData;
+    vm.saveEventEdit = saveEventEdit;
+    vm.editEvent = editEvent;
+    vm.deleteEvent = deleteEvent;
+
+    // Set required flag
+    vm.required = true;
+    
+    
+    getJobData();
+    getEventData();
+  
+    // Job Related Functions
     function getJobData(){
       vm.jobs = apiInterface.getJobRecords();
     }
 
     function saveJobData(data){
         if(data){
+          data.id = vm.jobs.length === 0? 0 : vm.jobs[vm.jobs.length - 1].id + 1;
           apiInterface.postJobRecord(data);
         }     
     }
+
+     function editJob(index, data){
+      vm.editFormVisible = true;
+      // Create new object from data values
+      vm.jobEdited = Object.assign({}, data);
+      vm.jobEdited.id = index;
+    }
+
+    function saveJobEdit(data){ 
+      apiInterface.updateJobRecord(data.id, data)
+      vm.editFormVisible = false;
+    }
+
+    function deleteJob(index){
+      apiInterface.deleteJobRecord(index);
+    }
+
+    // Event related functions
+    
+    function getEventData(){
+      vm.events = apiInterface.getEventRecords();
+    }
+
+    function editEvent(index, data){
+      vm.editFormVisible = true;
+      // Create new object from data values
+      vm.eventEdited = Object.assign({}, data);
+      vm.eventEdited.id = index;
+    }
+
 
     function saveEventData(data){
         if(data){
@@ -50,14 +91,17 @@
         }
     }
 
-    function editJob(data){
-      vm.editFormVisible = true;
-      vm.jobEdited.push(data);
-    }
-
-    function saveEdit(data){
+    function saveEventEdit(data){ 
+      apiInterface.updateEventRecord(data.id, data)
       vm.editFormVisible = false;
     }
+
+    function deleteEvent(index){
+      apiInterface.deleteEventRecord(index);
+    }
+
+
+   
 
   }
 })();

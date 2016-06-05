@@ -31,6 +31,16 @@
     <!-- bower:js -->
     <!-- run `gulp inject` to automatically populate bower script dependencies -->
     <!-- endbower -->
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB5Wu-hu25v0Jk0s3oQHCJKnzc95V5JtpM",
+        authDomain: "dazzingtities.firebaseapp.com",
+        databaseURL: "https://dazzingtities.firebaseio.com",
+        storageBucket: "dazzingtities.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
