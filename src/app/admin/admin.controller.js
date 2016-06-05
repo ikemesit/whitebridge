@@ -6,9 +6,11 @@
     .controller('AdminController', AdminController);
 
   /** @ngInject */
-  function AdminController($timeout, $log, apiInterface) {
+  function AdminController($timeout, $log, firebaseArray, _, apiInterface) {
     var vm = this;
 
+    vm.database = firebaseArray.ref;
+    
     // Jobs collection from API
     vm.jobs = [];
     // Job object edited
@@ -40,19 +42,25 @@
     vm.required = true;
     
     
-    getJobData();
+    // getJobData();
     getEventData();
+
+    vm.database.$loaded().then(function(records){
+      // vm.jobs = _.find(records, "jobs");
+      $log.info(records.key);
+    });
   
     // Job Related Functions
-    function getJobData(){
-      vm.jobs = apiInterface.getJobRecords();
-    }
+    // function getJobData(){
+      
+    // }
 
     function saveJobData(data){
-        if(data){
-          data.id = vm.jobs.length === 0? 0 : vm.jobs[vm.jobs.length - 1].id + 1;
-          apiInterface.postJobRecord(data);
-        }     
+        // if(data){
+        //   data.id = vm.jobs.length === 0? 0 : vm.jobs[vm.jobs.length - 1].id + 1;
+        //   apiInterface.postJobRecord(data);
+        // }
+        vm.database.$add(data);     
     }
 
      function editJob(index, data){

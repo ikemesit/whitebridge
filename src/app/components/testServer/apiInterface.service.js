@@ -38,9 +38,9 @@
     var collections = {'jobs':jobs, 'events':events};
 
     // Get firebase 
-    this.database = firebaseArray.ref;
+    // this.database = firebaseArray.ref;
 
-    $log.info(this.database);
+    // $log.info(this.database);
 
 
     // Bind Job functions to scope
@@ -112,7 +112,7 @@
     }
 
     function populateFirebase(){
-        this.database.$add(collections);
+        // this.database.$add(collections);
     }
 
     
