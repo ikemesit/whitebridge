@@ -2,7 +2,7 @@
       <div class="col-sm-10 selector">
         <uib-tabset active="activePill" type="pills">
           <uib-tab index="0" heading="Add an Event Entry">
-            <form action="#" method="#" role="form" >
+            <form role="form" >
               <legend>Add an Event Entry</legend>
 
               <div class="form-group">
@@ -41,8 +41,8 @@
             <ul class="listing-edit-list" ng-show="!admin.editFormVisible">
               <li ng-repeat="event in admin.events track by event.$id">
                 <a>{{ event.title }}</a>
-                <button type="button" class="btn brand-btn-warn pull-right" ng-click="admin.deleteJob(event.id);"><i class="fa fa-close fa-lg"></i> Delete</button>
-                <button type="button" class="btn brand-btn-primary pull-right" ng-click="admin.editEvent(event.$id, event);"><i class="fa fa-edit fa-lg"></i> Edit</button>
+                <button type="button" class="btn brand-btn-warn pull-right" ng-click="admin.deleteEvent(event);"><i class="fa fa-close fa-lg"></i> Delete</button>
+                <button type="button" class="btn brand-btn-primary pull-right" ng-click="admin.editEvent(event);"><i class="fa fa-edit fa-lg"></i> Edit</button>
               </li>
             </ul>
 

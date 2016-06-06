@@ -76,7 +76,7 @@
       // vm.jobEdited = Object.assign({}, data);
       // vm.jobEdited.id = index;
       vm.jobEdited = data;
-      $log.info(index);
+      // $log.info(index);
     }
 
     function saveJobEdit(data){
@@ -98,11 +98,13 @@
       // vm.events = apiInterface.getEventRecords();
     // }
 
-    function editEvent(index, data){
+    function editEvent(data){
       vm.editFormVisible = true;
       // Create new object from data values
-      vm.eventEdited = Object.assign({}, data);
-      vm.eventEdited.id = index;
+      // vm.eventEdited = Object.assign({}, data);
+      // vm.eventEdited.id = index;
+      vm.eventEdited = data;
+      
     }
 
 
@@ -114,12 +116,17 @@
     }
 
     function saveEventEdit(data){
-      apiInterface.updateEventRecord(data.id, data)
+      // apiInterface.updateEventRecord(data.id, data)
+      // vm.editFormVisible = false;
+      vm.eventsDataRef.$save(data);
       vm.editFormVisible = false;
+      toastr.success("Event Entry Updated");
     }
 
-    function deleteEvent(index){
-      apiInterface.deleteEventRecord(index);
+    function deleteEvent(data){
+      vm.eventsDataRef.$remove(data);
+      toastr.success("Event Entry Deleted");
+      // apiInterface.deleteEventRecord(index);
     }
 
 

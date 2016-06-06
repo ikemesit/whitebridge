@@ -370,11 +370,11 @@
 }
 
 .about-img-header{
-  background: url('../assets/images/city-skyline3.jpg') no-repeat center center fixed;
+  background: url('../assets/images/aboutus-header.jpg') no-repeat center center fixed; //city-skyline3.jpg
 }
 
 .services-img-header{
-  background: url('../assets/images/city-skyline1.jpg') no-repeat center center fixed;
+  background: url('../assets/images/corporate2.jpg') no-repeat center center fixed; //city-skyline1.jpg
 }
 
 // about-page Section 1
@@ -423,7 +423,7 @@
 
 // about-page Section 2
 .about-section-2{
-  background: url('../assets/images/city-skyline3.jpg') no-repeat center center fixed;
+  background: url('../assets/images/aboutus-header.jpg') no-repeat center center fixed; //city-skyline3.jpg
   box-shadow: inset 0 50vh rgba($brand-color1, 0.8);
   padding: 3.5rem 50px;
   color: $white;
@@ -557,7 +557,6 @@
       width: 45%;
       height: 60vh;
       float: left;
-      background: url('../assets/images/city-skyline1.jpg') no-repeat center center;
       background-size: cover;
       border: thick solid $white;
     }
@@ -567,9 +566,20 @@
       width: 45%;
       height: 60vh;
       float: right;
-      background: url('../assets/images/city-skyline1.jpg') no-repeat center center;
       background-size: cover;
       border: thick solid $white;
+    }
+
+    & .rps-img{
+      background: url('../assets/images/r_p_s.jpg') no-repeat center center;
+    }
+
+    & .epm-img{
+      background: url('../assets/images/e_p_m.jpg') no-repeat center center;
+    }
+
+    & .cld-img{
+      background: url('../assets/images/c_l_d.jpg') no-repeat center center;
     }
 
     & .writeup-right{
@@ -657,6 +667,13 @@
   &:hover{
     background-color: $brand-color6;
   }
+  & h4.pull-left{
+    max-width: 70%;
+    // overflow: hidden;
+    // &:after{
+    //   content: ' ...';
+    // }
+  }
 }
 
 .ng-hide-add{
@@ -681,10 +698,8 @@
 }
 
 .full-listing-details{
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  border-left: thick solid #eee;
+  padding: 20px;
+  // border-left: thick solid #eee;
   margin-bottom: 20px;
   background-color: #eee;
   & hr{
