@@ -6,7 +6,7 @@
       .service('apiInterface', apiInterface);
 
   /** @ngInject */
-  function apiInterface($log, toastr, _, firebaseArray) {
+  function apiInterface($log, toastr, _) {
 
 
     var jobs = [
@@ -20,7 +20,7 @@
         exp: '4',
         salary: '$30,000'
       }
-      
+
     ];
 
     var events = [
@@ -32,12 +32,12 @@
         date: '25th June, 2016',
         fee: '50,000'
       }
-      
+
     ];
 
-    var collections = {'jobs':jobs, 'events':events};
+    // var collections = {'jobs':jobs, 'events':events};
 
-    // Get firebase 
+    // Get firebase
     // this.database = firebaseArray.ref;
 
     // $log.info(this.database);
@@ -55,9 +55,9 @@
     this.updateEventRecord = updateEventRecord;
     this.deleteEventRecord = deleteEventRecord;
 
-    this.populateFirebase = populateFirebase;
+    // this.populateFirebase = populateFirebase;
 
-    
+
 
     function getJobRecords() {
       return jobs;
@@ -102,7 +102,7 @@
             events[i] = Object.assign({}, editedEvent);
           }
        }
-       toastr.success("Event Entry Edit Saved"); 
+       toastr.success("Event Entry Edit Saved");
     }
 
     function deleteEventRecord(index){
@@ -111,11 +111,11 @@
         });
     }
 
-    function populateFirebase(){
+    // function populateFirebase(){
         // this.database.$add(collections);
-    }
+    // }
 
-    
+
   }
 
 })();

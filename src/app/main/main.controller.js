@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($uibModal, $log, firebaseArray, apiInterface) {
+  function MainController($uibModal, $log, firebaseArray) {
     var vm = this;
 
     vm.jobsDataRef = firebaseArray.jobsRef;

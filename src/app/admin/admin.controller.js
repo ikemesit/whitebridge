@@ -94,9 +94,9 @@
 
     // Event related functions
 
-    function getEventData(){
+    // function getEventData(){
       // vm.events = apiInterface.getEventRecords();
-    }
+    // }
 
     function editEvent(index, data){
       vm.editFormVisible = true;
