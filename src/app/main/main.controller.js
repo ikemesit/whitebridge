@@ -6,14 +6,11 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, $uibModal, $log, webDevTec, toastr, apiInterface) {
+  function MainController($uibModal, $log, firebaseArray, apiInterface) {
     var vm = this;
 
-  
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1463136796626;
-    vm.showToastr = showToastr;
+    vm.jobsDataRef = firebaseArray.jobsRef;
+    vm.eventsDataRef = firebaseArray.eventsRef;
 
     // Map Settings
     vm.map = { center: { latitude: 5.0151090, longitude: 7.9529442 }, zoom: 15};
@@ -70,7 +67,7 @@
       }
     ];
 
-    
+
 
     // Get selected data to pass to modal
     vm.facilitatorData=[];
@@ -86,38 +83,23 @@
     // Fire tab content animation
     vm.showTabContent = function(data){ showTabContent(data); }; //FIXME: Get tab animation to work
 
-  
-    activate();
+    // Fetch Listings Records
+    vm.jobsDataRef.$loaded().then(function(records){
+      vm.jobs = records;
+    });
 
-    function activate() {
-      getWebDevTec();
-      fetchJobRecords();
-      fetchEventRecords();
-      $timeout(function() {
-        vm.classAnimation = 'rubberBand';
-      }, 4000);
-    }
+    vm.eventsDataRef.$loaded().then(function(records){
+      vm.events = records;
+    });
 
-    function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-      vm.classAnimation = '';
-    }
 
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
+    // function fetchJobRecords(){
+    //   vm.jobData = apiInterface.getJobRecords();
+    // }
 
-      angular.forEach(vm.awesomeThings, function(awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
-    }
-
-    function fetchJobRecords(){
-      vm.jobData = apiInterface.getJobRecords();
-    }
-
-    function fetchEventRecords(){
-      vm.eventData = apiInterface.getEventRecords();
-    }
+    // function fetchEventRecords(){
+    //   vm.eventData = apiInterface.getEventRecords();
+    // }
 
     function openModalBox(size) {
       var modalInstance = $uibModal.open({
@@ -140,7 +122,7 @@
         $log.info('Modal dismissed at: ' + new Date());
       });
     }
-      
+
     function grabSelected(data){
       vm.facilitatorData = [];
       vm.facilitatorData.push(data);

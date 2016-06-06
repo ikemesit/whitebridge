@@ -7,12 +7,14 @@
 
 		/** @ngInject */
 		function firebaseArray($log, $firebaseArray){
-		
-			// Get Firebase database object
-			var ref = firebase.database().ref();
+
+			// Get Firebase database data end-points
+      var jobsRef = firebase.database().ref("jobs");
+			var eventsRef = firebase.database().ref("events");
 
 			return {
-				ref: $firebaseArray(ref)
+				jobsRef: $firebaseArray(jobsRef),
+        eventsRef: $firebaseArray(eventsRef)
 			}
 
 

@@ -12,7 +12,7 @@
     }
   }
 
-// Home-page landing viewport wrap 
+// Home-page landing viewport wrap
 .landing-wrap{
   width: 100%;
   height: 100vh;
@@ -234,7 +234,7 @@
         $delay: .2s,
         $function: ease
       );
-    }   
+    }
   }
 }
 
@@ -255,7 +255,7 @@
   }
 }
 
-// Home-page Section 1 
+// Home-page Section 1
 .section-1{
   padding: 3.5rem 0;
   padding-top: 3rem;
@@ -318,7 +318,7 @@
 .section-3{
   padding: 3.5rem 0;
   background-color: $brand-color4;
-}    
+}
 
 // Page Title Styles
 .page-title{
@@ -332,7 +332,7 @@
   & hr{
     width: 200px;
     margin-top: 10px;
-    border: thin solid rgba($white, 0.7); 
+    border: thin solid rgba($white, 0.7);
     transition: width 0.3s ease-in;
   }
   & i{
@@ -365,8 +365,8 @@
 
     & .inner-wrap{
       border: thin solid $white;
-    }    
-  } 
+    }
+  }
 }
 
 .about-img-header{
@@ -377,7 +377,7 @@
   background: url('../assets/images/city-skyline1.jpg') no-repeat center center fixed;
 }
 
-// about-page Section 1 
+// about-page Section 1
 .about-section-1{
   height: auto;
   padding: 5rem 0;
@@ -415,7 +415,7 @@
     width: 200px;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    border: thin solid $brand-color1; //thin solid rgba($white, 0.7); 
+    border: thin solid $brand-color1; //thin solid rgba($white, 0.7);
     // transition: width 0.3s ease-in;
   }
 }
@@ -456,7 +456,7 @@
 
 
 
-// services-page Section 1 
+// services-page Section 1
 .service-section-1{
   height: auto;
   padding: 4rem 0;
@@ -482,7 +482,7 @@
     width: 200px;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    border: thin solid $brand-color1; //thin solid rgba($white, 0.7); 
+    border: thin solid $brand-color1; //thin solid rgba($white, 0.7);
   }
 
   @include media(">1280px"){
@@ -495,15 +495,15 @@
 // Services-page section 2
 .service-section-2{
    height: auto;
- 
+
   & hr.custom{
     width: 200px;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    border: thin solid $brand-color1; //thin solid rgba($white, 0.7); 
+    border: thin solid $brand-color1; //thin solid rgba($white, 0.7);
   }
 
-  
+
   .nav-tabs > li > a{
     font-family: 'ralewaybold';
     border-bottom: none;
@@ -682,10 +682,23 @@
 
 .full-listing-details{
   padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
   border-left: thick solid #eee;
   margin-bottom: 20px;
+  background-color: #eee;
+  & hr{
+    border: none;
+    border-top: thin solid $brand-color1;
+  }
 }
 
+.item-label{
+  font-family: 'ralewaybold';
+  padding: 5px 10px;
+  background-color: lighten($black, 70%);
+  color: $white;
+}
 .job-title, .salary{
   font-family: 'ralewaybold';
 }

@@ -5,6 +5,7 @@
     </div>
     <div class="modal-body">
         <form role="form">
+            <legend>Personal Information</legend>
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-12">
@@ -15,24 +16,80 @@
             </div>
             <div class="form-group">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <label for="">Date of Birth</label>
                         <input type="text" class="form-control input-lg" id="" placeholder="Date of birth" ng-model="jobform.applicant.dob">
-                    </div> 
-                    <div class="col-sm-6">
-                        <label for="">Email Address</label>
-                        <input type="text" class="form-control input-lg" id="" placeholder="Email Address" ng-model="jobform.applicant.dob">
-                    </div> 
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="maritalStatus">Marital Status</label><br>
+                        <label class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox1" value="married"> Married
+                        </label>
+                        <label class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox1" value="single"> Single
+                        </label><br>
+                        <label class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox1" value="seperated"> Seperated
+                        </label>
+                        <label class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox1" value="divorced"> Divorced
+                        </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="gender">Gender</label><br>
+                        <input type="radio" name="gender" value="male" checked> Male
+                        <input type="radio" name="gender" value="female"> Female
+                    </div>
                 </div>
             </div>
-        
-            
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="">Phone Number</label>
+                  <input type="" class="form-control input-lg">
+                </div>
+                <div class="col-sm-6">
+                  <label for="">Email</label>
+                  <input type="" class="form-control input-lg">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-12">
+                  <label for="">Residential Address</label>
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-4">
+                  <label for="">Home Town</label>
+                  <input type="" class="form-control input-lg">
+                </div>
+                <div class="col-sm-4">
+                  <label for="">L.G.A</label>
+                  <input type="" class="form-control input-lg">
+                </div>
+                <div class="col-sm-4">
+                  <label for="">State of Origin</label>
+                  <input type="" class="form-control input-lg">
+                </div>
+              </div>
+            </div>
+
+            <legend>Educational Qualifications</legend>
+
+
             <div class="row">
                 <div class="col-sm-12">
                     <button type="button" class="btn brand-btn-success btn-lg" ng-click="jobform.submitForm(jobform.applicant);">Submit</button>
                 </div>
             </div>
-            
+
         </form>
     </div>
     <!-- <div class="modal-footer">

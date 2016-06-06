@@ -4,7 +4,7 @@
           <uib-tab index="0" heading="Add a Job Entry">
             <form action="#" method="#" role="form" >
               <legend>Add a Job Entry</legend>
-            
+
               <div class="form-group">
                 <label for="">Job Title</label>
                 <input type="text" class="form-control" id="" placeholder="{{ admin.job.title }}" ng-model="admin.job.title">
@@ -32,7 +32,7 @@
                     <input type="text" class="form-control" id="" placeholder="{{ admin.job.salary }}" ng-model="admin.job.salary">
                   </div>
                 </div>
-               
+
               </div>
 
               <button type="button" class="btn btn-lg brand-btn-success" ng-click="admin.saveJob(admin.job)">Save Job Entry</button>
@@ -40,16 +40,16 @@
           </uib-tab>
           <uib-tab heading="Edit Job Entries">
             <ul class="listing-edit-list" ng-show="!admin.editFormVisible">
-              <li ng-repeat="job in admin.jobs track by job.id">
+              <li ng-repeat="job in admin.jobs track by job.$id">
                 <a>{{ job.title }}</a>
-                <button type="button" class="btn brand-btn-warn pull-right" ng-click="admin.deleteJob(job.id);"><i class="fa fa-close fa-lg"></i> Delete</button>
-                <button type="button" class="btn brand-btn-primary pull-right" ng-click="admin.editJob(job.id, job);"><i class="fa fa-edit fa-lg"></i> Edit</button>
+                <button type="button" class="btn brand-btn-warn pull-right" ng-click="admin.deleteJob(job);"><i class="fa fa-close fa-lg"></i> Delete</button>
+                <button type="button" class="btn brand-btn-primary pull-right" ng-click="admin.editJob(job.$id, job);"><i class="fa fa-edit fa-lg"></i> Edit</button>
               </li>
             </ul>
 
             <form role="form" ng-show="admin.editFormVisible">
               <legend>Edit a Job Entry</legend>
-            
+
               <div class="form-group">
                 <label for="">Job Title</label>
                 <input type="text" class="form-control" id="" placeholder="{{ admin.jobEdited.title }}" ng-model="admin.jobEdited.title" ng-required="vm.required">
@@ -77,7 +77,7 @@
                     <input type="text" class="form-control" id="" placeholder="{{ admin.jobEdited.salary }}" ng-model="admin.jobEdited.salary">
                   </div>
                 </div>
-               
+
               </div>
 
               <button type="button" class="btn btn-lg brand-btn-success" ng-click="admin.saveJobEdit(admin.jobEdited)">Save Job Entry</button>
@@ -90,5 +90,5 @@
         </uib-tabset>
 
       </div>
-      
-    
+
+

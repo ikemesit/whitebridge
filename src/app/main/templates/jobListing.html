@@ -41,16 +41,21 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-8">
-              <div class="full-listing" ng-repeat="job in main.jobData track by $index">
+              <div class="full-listing" ng-repeat="job in main.jobs track by $index">
                 <div class="listing-preview" ng-hide="main.hidden == $index" ng-click="main.hidden = $index">
                   <h4 class="job-title pull-left">{{ job.title}}</h4>
                   <h4 class="salary pull-right">{{ job.salary }}</h4>
                 </div>
                 <div class="full-listing-details clearfix" ng-show="main.hidden == $index" ng-click="main.hidden = undefined">
                   <h4 class="job-title">{{ job.title }}</h4>
+                  <hr>
+                  <p class="item-label">Job Description</p>
                   <p class="job-description">{{ job.description }}</p>
+                  <p class="item-label">Required Qualifications</p>
                   <p class="qualifications">{{ job.qualifications }}</p>
+                  <p class="item-label">Minimum Years of Experience</p>
                   <p class="experience">{{ job.experience }}</p>
+                  <p class="item-label">Salary Offered</p>
                   <p class="salary">{{ job.salary }}</p>
                   <button type="button" class="btn btn-lg brand-btn-success pull-right job-button" ng-click="$event.stopPropagation(); main.openJobForm();">Apply for Job</button>
                 </div>
@@ -65,7 +70,7 @@
           </div>
         </div>
       </div>
-      
+
     </section>
   </div><!-- listing-padding-fix -->
 
@@ -88,7 +93,7 @@
           <li><a href="#" title="">Company Blog</a></li>
           <li><a href="#" title="">Careers</a></li>
         </ul>
-      </div>  
+      </div>
       <div class="col-sm-3">
         <h4>Contact</h4>
         <ul>
@@ -102,8 +107,8 @@
         <a href="https://www.facebook.com/whiteBridgeconsulting" title=""><i class="fa fa-facebook-official fa-2x"></i></a>
         <a href="https://twitter.com/bridgingHR" title=""><i class="fa fa-twitter  fa-2x"></i></a>
         <a href="https://www.linkedin.com/in/whitebridge-consulting-6b7653b7" title=""><i class="fa fa-linkedin  fa-2x"></i></a>
-      </div>           
-    </div><!-- End of row -->  
+      </div>
+    </div><!-- End of row -->
   </div><!-- End of container -->
 </div><!-- End of upper-footer -->
 <div class="bottom-footer">
@@ -111,7 +116,7 @@
     <div class="row">
       <div class="col-sm-12">
         <p>Copyright &copy; 2016. Whitebridge Consulting </p>
-      </div>        
-    </div> 
+      </div>
+    </div>
   </div>
 </div>

@@ -37,7 +37,7 @@
             <a class="nav-link" ui-sref="contact">Contact Us</a>
           </li>
         </ul>
-      </div> 
+      </div>
     </header>
 
     <div class="row">
@@ -55,7 +55,7 @@
     <h4 class="pull-right"><i class="fa fa-facebook-official fa-lg"></i></h4>
   </div><!-- /.landing-bottom-bar-->
 
-</div><!-- End of landing wrap--> 
+</div><!-- End of landing wrap-->
 
 
 <section class="featurette-block section-1">
@@ -105,7 +105,7 @@
             <div class="panel-body">
               <h4 class="widget-title mb0">Recent Posts</h4>
             </div>
-        
+
             <ul class="list-group">
               <li class="list-group-item">
                 <p class="nm">Feed not yet available</p>
@@ -127,8 +127,8 @@
             <div class="panel-body">
               <h4 class="widget-title mb0">Latest Jobs</h4>
             </div>
-        
-            <ul class="list-group" ng-repeat="job in main.jobData | limitTo:3">
+
+            <ul class="list-group" ng-repeat="job in main.jobs | limitTo:3">
               <li class="list-group-item listing">
                 <a ui-sref="jobs" title="" class="postingWrap">
                   <p class="nm" >{{ job.title }}</p>
@@ -143,8 +143,8 @@
             <div class="panel-body">
               <h4 class="widget-title mb0">Upcoming Events</h4>
             </div>
-        
-            <ul class="list-group" ng-repeat="event in main.eventData | limitTo:3">
+
+            <ul class="list-group" ng-repeat="event in main.events | limitTo:3">
               <li class="list-group-item listing">
                 <a ui-sref="events" title="" class="postingWrap">
                   <p class="nm">{{ event.title }}</p>
@@ -177,7 +177,7 @@
               <li><a href="#" title="">Company Blog</a></li>
               <li><a href="#" title="">Careers</a></li>
             </ul>
-          </div>  
+          </div>
           <div class="col-sm-3">
             <h4>Contact</h4>
             <ul>
@@ -191,8 +191,8 @@
             <a href="https://www.facebook.com/whiteBridgeconsulting" title=""><i class="fa fa-facebook-official fa-2x"></i></a>
             <a href="https://twitter.com/bridgingHR" title=""><i class="fa fa-twitter  fa-2x"></i></a>
             <a href="https://www.linkedin.com/in/whitebridge-consulting-6b7653b7" title=""><i class="fa fa-linkedin  fa-2x"></i></a>
-          </div>          
-        </div><!-- End of row --> 
+          </div>
+        </div><!-- End of row -->
       </div><!-- End of container -->
     </div><!-- End of upper-footer -->
     <div class="bottom-footer">
@@ -200,8 +200,8 @@
         <div class="row">
           <div class="col-sm-12">
             <p>Copyright &copy; 2016. Whitebridge Consulting </p>
-          </div>        
-        </div> 
+          </div>
+        </div>
       </div>
     </div>
 
