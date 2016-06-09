@@ -25,8 +25,11 @@
     overflow-x: hidden;
   }
 
-  @include media("<768px"){
-    background: url("../assets/images/professional-business-woman.jpg") center center no-repeat;
+  // @include media("<768px"){
+  //   background: url("../assets/images/professional-business-woman.jpg") 60% center fixed no-repeat;
+  // }
+  @include media("<450px"){
+    height: auto;
   }
 }
 
@@ -203,6 +206,20 @@
       font-size: ms(1);
     }
   }
+
+  @include media("<450px"){
+
+    h1{
+      // line-height: 65px;
+      font-size: ms(4);
+      margin-top: 20px;
+    }
+
+    p{
+      margin-top: -10px;
+      margin-bottom: 30px;
+    }
+  }
 }
 
 // Landing section bottom bar
@@ -236,6 +253,21 @@
       );
     }
   }
+
+  @include media("<450px"){
+    margin-top: 90vh;
+    padding: 10px 3rem;
+    height: 10vh;
+    margin-bottom: 0;
+   & .pull-left{
+    display: block;
+    font-size: 14px;
+   }
+   & .pull-right{
+      display: none;
+   }
+ }
+
 }
 
 
@@ -258,10 +290,10 @@
 // Home-page Section 1
 .section-1{
   padding: 3.5rem 0;
-  padding-top: 3rem;
+  // padding-top: 3rem;
   & .col-lg-4 {
     //margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
     text-align: center;
   }
   & h2 {
@@ -278,6 +310,16 @@
   }
   & a.btn{
     margin-top: 1rem;
+  }
+  @include media("<450px"){
+    .col-lg-4{
+      padding-bottom: 2rem;
+      border-bottom: thin solid #eee;
+      &:nth-of-type(3){
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
   }
 }
 
@@ -311,6 +353,19 @@
     display: block;
     //z-index: 5;
     background-color: rgba($brand-color1, 0.7);
+  }
+
+  @include media("<450px"){
+    & .heading{
+      margin-top: -1.5rem;
+      font-size: ms(2);
+      margin-bottom: 10px;
+    }
+
+    & p.lead{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
@@ -743,8 +798,6 @@
 
 // footer
 .upper-footer, .bottom-footer{
-  // padding-top: 2%;
-  // padding-bottom: 2%;
   padding: 2% 50px;
   color: darken($white, 10%);
   line-height: ms(2);
@@ -810,6 +863,18 @@
           color: none;
         }
      }
+  }
+
+   @include media ("<450px"){
+      padding: 20px;
+      h4, p, a{
+        text-align: center;
+      }
+      .social a{
+        &:first-of-type{
+          margin-left: 25%;
+        }
+      }
   }
 }
 

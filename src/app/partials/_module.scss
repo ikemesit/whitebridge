@@ -102,17 +102,6 @@ button.btn, a.btn{
       letter-spacing: -.05px;
       font-size: ms(3);
       font-family: 'ralewaybold';
-      // @media (min-width: 40em) {
-      //   .featurette-heading {
-      //     font-size: 50px;
-      //   }
-      // }
-
-      // @media (min-width: 62em) {
-      //   .featurette-heading {
-      //     margin-top: 30px;
-      //   }
-      // }
   }
   & p{
     font-family: 'ralewayregular';
@@ -133,6 +122,26 @@ button.btn, a.btn{
   & img{
     // min-width: 800px;
   }
+
+  @include media("<450px"){
+    .heading, p{
+      text-align: center;
+      // margin-bottom: 20px;
+    }
+
+    // p{
+    //   display: none;
+    // }
+
+    .btn{
+      width: 300px;
+      @include center-block;
+    }
+
+    .padded{
+      padding: 2rem 0;
+    }
+  }
 }
 
 // Unslider Styles
@@ -146,6 +155,10 @@ button.btn, a.btn{
     &:hover{
       color: rgba($black, 0.8);
     }
+  }
+
+  @include media ("<450px"){
+    margin-bottom: 0;
   }
 } 
 
