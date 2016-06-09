@@ -1,67 +1,70 @@
 button.btn, a.btn{
-  background-color: transparent;
+  // background-color: transparent;
   border-radius: 30px;
   font-family: 'ralewaybold';
 }
 
 .brand-btn-primary{
-  border: thin solid $brand-color2;
-  color: $brand-color2;
+  //border: thin solid $brand-color2;
+  background-color: $brand-color2;
+  color: $white; //$brand-color2;
   transition: all 0.2s ease-in;
   &:hover{
     color: $white;
-    background-color: $brand-color2;
+    background-color: $brand-color1;
   }
 
   &:active{
     color: $white;
-    background-color: $brand-color2;
+    background-color: $brand-color1;
   }
 
   &:focus{
     color: $white;
-    background-color: $brand-color2;
+    background-color: $brand-color1;
   }
 }
 
 .brand-btn-success{
-  border: thin solid $brand-success;
-  color: $brand-success;
+  // border: thin solid $brand-success;
+  background-color: $brand-success;
+  color: $white; //$brand-success;
   transition: all 0.2s ease-in;
   &:hover{
     color: $white;
-    background-color: $brand-success;
+    background-color: darken($brand-success, 10%);
   }
 
   &:active{
     color: $white;
-    background-color: $brand-success;
+    background-color: darken($brand-success, 10%);
   }
 
   &:focus{
     color: $white;
-    background-color: $brand-success;
+    background-color: darken($brand-success, 10%);
   }
 }
 
 
 .brand-btn-warn{
-  border: thin solid $brand-color5;
-  color: $brand-color5;
+  border: thin solid $brand-color5;//
+  color: $white; //$brand-color5;
+  background-color: $brand-color5;
   transition: all 0.2s ease-in;
   &:hover{
     color: $white;
-    background-color: $brand-color5;
+    background-color: darken($brand-color5, 10%);
   }
 
   &:active{
     color: $white;
-    background-color: $brand-color5;
+    background-color: darken($brand-color5, 10%);
   }
 
   &:focus{
     color: $white;
-    background-color: $brand-color5;
+    background-color: darken($brand-color5, 10%);
   }
 }
 

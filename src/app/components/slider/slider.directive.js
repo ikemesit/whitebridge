@@ -20,6 +20,7 @@
 			angular.element(document).find('.featurette-slider').unslider(
 				{
 					'autoplay' : true,
+          'delay'   : 10000,
 					'arrows' :{
 						'prev' : '<a class="unslider-arrow prev"><span class="glyphicon glyphicon-chevron-left"></span></a>',
 						'next' : '<a class="unslider-arrow next"><span class="glyphicon glyphicon-chevron-right"></span></a>'
