@@ -785,12 +785,51 @@
   color: $white;
   border-radius: 6px;
   background-color: $brand-color2;
+  margin-bottom: 100px;
   & h4{
     font-family: 'ralewaybold';
   }
   & .email{
     font-family: 'ralewaybold';
     text-transform: italic;
+  }
+}
+
+.resume-upload{
+  padding: 20px;
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  background-color: lighten($brand-color1, 10%); //$brand-color6;
+  color: $white;
+  & h4{
+    font-family: 'ralewaybold';
+    text-align: center;
+    font-size: ms(2);
+  }
+  & p{
+    text-align: center;
+  }
+
+  & .progress{
+    height: 35px;
+  }
+
+  & .progress {
+      display: inline-block;
+      width: 100%;
+      border: 3px solid #e5e5e5;//
+      border: none;
+      background-color: #e5e5e5;
+  }
+
+  & .progress div {
+      font-size: smaller;
+      background: $brand-success;
+      width: 0;
+      padding: 10px;
+      text-align: center;
   }
 }
 
