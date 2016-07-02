@@ -70,6 +70,13 @@
         templateUrl: 'app/admin/templates/manageevents.html',
         controller: 'AdminController',
         controllerAs: 'admin'
+      })
+
+      .state('admin.cvrecords', {
+        url: '/view-uploaded-cvs',
+        templateUrl: 'app/admin/templates/cvrecords.html',
+        controller: 'AdminController',
+        controllerAs: 'admin'
       });
 
     $urlRouterProvider.otherwise('/');

@@ -2,13 +2,21 @@ button.btn, a.btn{
   // background-color: transparent;
   border-radius: 30px;
   font-family: 'ralewaybold';
+  outline: none;
+  &:focus{
+    outline: none;
+  }
+  &:active{
+    outline: none;
+  }
+  
 }
 
 .brand-btn-primary{
   //border: thin solid $brand-color2;
   background-color: $brand-color2;
   color: $white; //$brand-color2;
-  transition: all 0.2s ease-in;
+  transition: all 0.2s;
   &:hover{
     color: $white;
     background-color: $brand-color1;
@@ -29,7 +37,7 @@ button.btn, a.btn{
   // border: thin solid $brand-success;
   background-color: $brand-success;
   color: $white; //$brand-success;
-  transition: all 0.2s ease-in;
+  transition: all 0.2s;
   &:hover{
     color: $white;
     background-color: darken($brand-success, 10%);

@@ -50,7 +50,7 @@
                   <h4 class="job-title">{{ event.title }}</h4>
                   <!-- <hr> -->
                   <p class="item-label">Event Details</p>
-                  <p class="job-description">{{ event.description }}</p>
+                  <p class="job-description" ng-bind-html="event.description"></p>
                   <p class="item-label">Location</p>
                   <p class="qualifications">{{ event.location }}</p>
                   <p class="item-label">Date</p>

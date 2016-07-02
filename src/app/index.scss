@@ -92,6 +92,19 @@ html, body{
   }
 }
 
+.ng-hide{
+  animation: 1s fadeHide;
+}
+
+@keyframes fadeHide{
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

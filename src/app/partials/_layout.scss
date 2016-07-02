@@ -1081,6 +1081,27 @@
   }
 }
 
+.cv-listings{
+  .fa{
+    margin-right: 20px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .fa-download{
+    transition: all 0.6s;
+    &:hover{
+      color: $brand-success;
+    }
+  }
+
+  .fa-remove{
+    &:hover{
+      color: red;
+    }
+  }
+}
+
 
 
 

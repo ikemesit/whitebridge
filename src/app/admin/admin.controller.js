@@ -6,7 +6,7 @@
     .controller('AdminController', AdminController);
 
   /** @ngInject */
-  function AdminController($timeout, $log, firebaseArray, _, toastr) {
+  function AdminController($timeout, $log, firebaseArray, _, toastr, cvManager) {
     var vm = this;
 
     vm.jobsDataRef = firebaseArray.jobsRef;
@@ -42,14 +42,19 @@
     // Set required flag
     vm.required = true;
 
+    // Retrieve Jobs data and assign
     vm.jobsDataRef.$loaded().then(function(records){
       vm.jobs = records;
     });
 
+    // Retrieve Events data and assign
     vm.eventsDataRef.$loaded().then(function(records){
       vm.events = records;
     });
 
+    // Get CV Data
+    vm.cvRecords;
+    getCvRecords();
 
     function saveJobData(data){
         if(data){
@@ -96,6 +101,12 @@
     function deleteEvent(data){
       vm.eventsDataRef.$remove(data);
       toastr.success("Event Entry Deleted");
+    }
+
+    function getCvRecords(){
+      cvManager.getCvData().then(function (data){
+        vm.cvRecords = data;
+      });
     }
 
   }//Finis
