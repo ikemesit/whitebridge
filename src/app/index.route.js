@@ -6,7 +6,7 @@
     .config(routerConfig);
 
   /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
+  function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
       .state('home', {
         url: '/',
@@ -29,13 +29,6 @@
         controllerAs: 'main'
       })
 
-      .state('contact', {
-        url: '/contact-us',
-        templateUrl: 'app/main/templates/contact.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      })
-
       .state('jobs', {
         url: '/jobs',
         templateUrl: 'app/main/templates/jobListing.html',
@@ -50,11 +43,30 @@
         controllerAs: 'main'
       })
 
+      .state('blog', {
+        url: '/blog',
+        onEnter: function($window){ $window.open("http://www.whitebridgeconsult.com/blog/", "_self"); }
+      })
+
+      .state('contact', {
+        url: '/contact-us',
+        templateUrl: 'app/main/templates/contact.html',
+        controller: 'MainController',
+        controllerAs: 'main'
+      })
+
       .state('admin', {
         url: '/admin',
         templateUrl: 'app/admin/templates/admin.html',
         controller: 'AdminController',
-        redirectTo: 'admin.managejobs',
+        redirectTo: 'admin.login',
+        controllerAs: 'admin'
+      })
+
+      .state('admin.login', {
+        url: '/login',
+        templateUrl: 'app/admin/templates/login.html',
+        controller: 'AdminController',
         controllerAs: 'admin'
       })
 
@@ -62,24 +74,44 @@
         url: '/manage-jobs',
         templateUrl: 'app/admin/templates/managejobs.html',
         controller: 'AdminController',
-        controllerAs: 'admin'
+        controllerAs: 'admin',
+        resolve: {
+          'auth': ['firebaseArray', function(firebaseArray){
+            return firebaseArray.authRef.$requireSignIn();
+          }]
+        }
       })
 
       .state('admin.manageevents', {
         url: '/manage-events',
         templateUrl: 'app/admin/templates/manageevents.html',
         controller: 'AdminController',
-        controllerAs: 'admin'
+        controllerAs: 'admin',
+        resolve: {
+          'auth': ['firebaseArray', function(firebaseArray){
+            return firebaseArray.authRef.$requireSignIn();
+          }]
+        }
       })
 
       .state('admin.cvrecords', {
         url: '/view-uploaded-cvs',
         templateUrl: 'app/admin/templates/cvrecords.html',
         controller: 'AdminController',
-        controllerAs: 'admin'
+        controllerAs: 'admin',
+        resolve: {
+          'auth': ['firebaseArray', function(firebaseArray){
+            return firebaseArray.authRef.$requireSignIn();
+          }]
+        } 
       });
 
+    // function authFunc(adminAuthService){
+    //   return adminAuthService.isLoggedIn();
+    // }
+
     $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
   }
 
 })();

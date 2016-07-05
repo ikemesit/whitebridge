@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid" >
     <div class="row">
-      <div class="col-sm-2 admin-sidebar">
+      <div class="col-sm-2 admin-sidebar" ng-show="admin.sideBar">
         <div class="row">
           <div class="col-sm-12">
             <h4 class="admin-page-title">Administrator Panel</h4>
@@ -13,7 +13,7 @@
               <li><a ui-sref="admin.managejobs" ><span class="glyphicon glyphicon-chevron-right"></span>Manage Job Listings</a></li>
               <li><a ui-sref="admin.manageevents" ><span class="glyphicon glyphicon-chevron-right"></span>Manage Events Listings</a></li>
               <li><a ui-sref="admin.cvrecords" ><span class="glyphicon glyphicon-chevron-right"></span>View CV Records</a></li>
-              <li><a ui-sref="#" ><span class="fa fa-sign-out"></span>Sign Out</a></li>
+              <li><a href="#" ng-click="admin.signOutUser();"><span class="fa fa-sign-out"></span>Sign Out</a></li>
             </ul>
           </div><!-- /.col-sm-12 -->
         </div><!-- /.row -->

@@ -6,11 +6,18 @@
     .controller('AdminController', AdminController);
 
   /** @ngInject */
-  function AdminController($timeout, $log, firebaseArray, _, toastr, cvManager) {
+  function AdminController($timeout, $log, $state, firebaseArray, _, toastr, cvManager, adminAuthService) {
     var vm = this;
+
 
     vm.jobsDataRef = firebaseArray.jobsRef;
     vm.eventsDataRef = firebaseArray.eventsRef;
+
+    //Admin Sign In Credentials
+    vm.email = "Enter admin email";
+    vm.password = "Enter passowrd";
+    vm.signInUser = signIn;
+    vm.signOutUser = signOut;
 
     // Jobs collection from API
     vm.jobs = [];
@@ -55,6 +62,11 @@
     // Get CV Data
     vm.cvRecords;
     getCvRecords();
+
+    //Switch admin side bar visibility
+    vm.sideBar;
+    checkLoggedIn();
+    
 
     function saveJobData(data){
         if(data){
@@ -108,6 +120,28 @@
         vm.cvRecords = data;
       });
     }
+
+    function signIn(email, password){
+      vm.sideBar = false;
+      adminAuthService.signIn(email, password);
+    }
+
+    function signOut(){
+      vm.sideBar = true;
+      $state.go("admin.login");
+      return adminAuthService.signOut();
+    }
+
+    function checkLoggedIn(){
+      firebaseArray.authRef.$onAuthStateChanged(function(){
+        var loggedIn = firebaseArray.authRef.$getAuth();
+        if(loggedIn)
+          vm.sideBar = true;
+        else
+          vm.sideBar = false;
+      });
+    }
+
 
   }//Finis
 })();

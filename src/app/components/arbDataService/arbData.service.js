@@ -22,7 +22,7 @@
 		{
 			name: 'Glory Odujirin',
 			qualifications: 'MAP, PRINCE2',
-			imageUrl: '',//assets/images/facilitators/ola.jpg
+			imageUrl: 'assets/images/avatar.png',//assets/images/facilitators/ola.jpg
 			desc: 	'<p>Glory Odujirin is an innovative and experienced development consultant who is passionate about the self-development of individuals for the development of Nigeria.</p>' +
 					'<p>Her over 15 years experience participating and leading social planning,  social  policy implementation projects and capacity building initiatives has been in various sectors including Non-Profits, Government and the Private sectors  inthe UK and Nigeria.</p>' +
 					'<p>She holds a degree in Chemistry and is a graduate of the Bill Gove Public Speaking Institute, USA.</p>' +
