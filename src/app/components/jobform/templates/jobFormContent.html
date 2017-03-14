@@ -1,0 +1,108 @@
+    <div class="modal-header">
+        <h3 class="modal-title" >Job Application Form</h3>
+        <p></p>
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <legend>Personal Information</legend>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control input-lg" id="" placeholder="Full Name" ng-model="jobform.applicant.name">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="">Date of Birth</label>
+                        <input type="text" class="form-control input-lg" id="" placeholder="Date of birth" ng-model="jobform.applicant.dob">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="maritalStatus">Marital Status</label><br>
+                        <label class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox1" value="married" ng-model="jobform.applicant.maritalStatus" 
+                                                                            ng-true-value="'married'" ng-false-value=false> Married
+                        </label>
+                        <label class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox1" value="single" ng-model="jobform.applicant.maritalStatus" 
+                                                                             ng-true-value="'single'" ng-false-value="false"> Single
+                        </label><br>
+                        <label class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox1" value="seperated" ng-model="jobform.applicant.maritalStatus" 
+                                                                        ng-true-value="'seperated'" ng-false-value="false"> Seperated
+                        </label>
+                        <label class="checkbox-inline">
+                          <input type="checkbox" id="inlineCheckbox1" value="divorced" ng-model="jobform.applicant.maritalStatus" 
+                                                                          ng-true-value="'divorced'" ng-false-value="false"> Divorced
+                        </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="gender">Gender</label><br>
+                        <input type="radio" name="gender" value="male" ng-model="jobform.applicant.gender" ng-true-value="'male'" ng-false-value="false" > Male
+                        <input type="radio" name="gender" value="female" ng-model="jobform.applicant.gender" ng-true-value="'female'" ng-false-value="false" > Female
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="">Phone Number</label>
+                  <input type="" class="form-control input-lg" placeholder="Phone Number" ng-model="jobform.applicant.phone">
+                </div>
+                <div class="col-sm-6">
+                  <label for="">Email</label>
+                  <input type="" class="form-control input-lg" placeholder="Email" ng-model="jobform.applicant.email">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-12">
+                  <label for="">Residential Address</label>
+                  <textarea class="form-control input-lg" rows="3" placeholder="Residential Address" ng-model="jobform.applicant.address" ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-4">
+                  <label for="">Home Town</label>
+                  <input type="" class="form-control input-lg" placeholder="Home Town" ng-model="jobform.applicant.town">
+                </div>
+                <div class="col-sm-4">
+                  <label for="">L.G.A</label>
+                  <input type="" class="form-control input-lg" placeholder="L.G.A" ng-model="jobform.applicant.lga">
+                </div>
+                <div class="col-sm-4">
+                  <label for="">State of Origin</label>
+                  <input type="" class="form-control input-lg" placeholder="State of Origin" ng-model="jobform.applicant.state">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-12">
+                  <label for="">Educational Qualifications</label>
+                  <textarea class="form-control input-lg" rows="3" placeholder="Educational Qualifications" ng-model="jobform.applicant.qualifications"></textarea>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="button" class="btn brand-btn-success btn-lg" ng-click="jobform.submitForm(jobform.applicant);">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <!-- <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div> -->

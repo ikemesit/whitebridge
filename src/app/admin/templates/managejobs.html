@@ -1,0 +1,94 @@
+
+      <div class="col-sm-10 selector">
+        <uib-tabset active="activePill" type="pills">
+          <uib-tab index="0" heading="Add a Job Entry">
+            <form action="#" method="#" role="form" >
+              <legend>Add a Job Entry</legend>
+
+              <div class="form-group">
+                <label for="">Job Title</label>
+                <input type="text" class="form-control" id="" placeholder="{{ admin.job.title }}" ng-model="admin.job.title">
+              </div>
+
+              <div class="form-group">
+                <label for="">Job Description</label>
+                <ng-wig  placeholder="{{ admin.job.description }}" ng-model="admin.job.description"></ng-wig>
+              </div>
+
+              <div class="form-group">
+                <label for="">Desired Qualification</label>
+                <input type="text" class="form-control" id="" placeholder="{{ admin.job.qualifications }}" ng-model="admin.job.qualifications">
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <label for="">Desired Years of Experience</label>
+                    <input type="text" class="form-control" id="" placeholder="{{ admin.job.experience }}" ng-model="admin.job.experience">
+                  </div>
+
+                  <div class="col-sm-4">
+                    <label for="">Salary Offered</label>
+                    <input type="text" class="form-control" id="" placeholder="{{ admin.job.salary }}" ng-model="admin.job.salary">
+                  </div>
+                </div>
+
+              </div>
+
+              <button type="button" class="btn btn-lg brand-btn-success" ng-click="admin.saveJob(admin.job)">Save Job Entry</button>
+            </form>
+          </uib-tab>
+          <uib-tab heading="Edit Job Entries">
+            <ul class="listing-edit-list" ng-show="!admin.editFormVisible">
+              <li ng-repeat="job in admin.jobs track by job.$id">
+                <a>{{ job.title }}</a>
+                <button type="button" class="btn brand-btn-warn pull-right" ng-click="admin.deleteJob(job);"><i class="fa fa-close fa-lg"></i> Delete</button>
+                <button type="button" class="btn brand-btn-primary pull-right" ng-click="admin.editJob(job.$id, job);"><i class="fa fa-edit fa-lg"></i> Edit</button>
+              </li>
+            </ul>
+
+            <form role="form" ng-show="admin.editFormVisible">
+              <legend>Edit a Job Entry</legend>
+
+              <div class="form-group">
+                <label for="">Job Title</label>
+                <input type="text" class="form-control" id="" placeholder="{{ admin.jobEdited.title }}" ng-model="admin.jobEdited.title" ng-required="vm.required">
+              </div>
+
+              <div class="form-group">
+                <label for="">Job Description</label>
+                <ng-wig placeholder="{{ admin.jobEdited.description }}" ng-model="admin.jobEdited.description"></ng-wig>
+              </div>
+
+              <div class="form-group">
+                <label for="">Desired Qualification</label>
+                <input type="text" class="form-control" id="" placeholder="{{ admin.jobEdited.qualifications }}" ng-model="admin.jobEdited.qualifications">
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <label for="">Desired Years of Experience</label>
+                    <input type="text" class="form-control" id="" placeholder="{{ admin.jobEdited.experience }}" ng-model="admin.jobEdited.experience">
+                  </div>
+
+                  <div class="col-sm-4">
+                    <label for="">Salary Offered</label>
+                    <input type="text" class="form-control" id="" placeholder="{{ admin.jobEdited.salary }}" ng-model="admin.jobEdited.salary">
+                  </div>
+                </div>
+
+              </div>
+
+              <button type="button" class="btn btn-lg brand-btn-success" ng-click="admin.saveJobEdit(admin.jobEdited)">Save Job Entry</button>
+
+              <button type="button" class="btn btn-lg brand-btn-warn" ng-click="admin.editFormVisible = false">Cancel</button>
+            </form>
+
+
+          </uib-tab>
+        </uib-tabset>
+
+      </div>
+
+

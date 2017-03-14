@@ -1,0 +1,1281 @@
+// landing container
+.landing-container{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+// top-bar
+.top-bar{
+    top: 0;
+    width: 100%;
+    height: 5vh;
+    padding: 2px 50px 0 50px;
+    background-color: rgba($brand-color1, 0.9);
+    color: $white;
+    position: absolute;
+    // font-size: 14px; //ms(0);
+    & .col-sm-12{
+      padding-left: 0;
+      padding-right: 0;
+    }
+    & h4{
+    font-family: 'ralewaybold';
+    vertical-align: middle;
+    font-size: 14px;
+    & a{
+      color: $white;
+      &:hover{
+        color: $brand-color6;
+      }
+    }
+    & i{
+      margin-right: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    & span{
+      color: $brand-color6;
+    }
+
+    & .fa-facebook-official, .fa-twitter, .fa-google-plus{
+      margin-right: 20px;
+    }
+  }
+  & .livechat{
+    cursor: pointer;
+    margin-left: 30px;
+    &:hover{
+      @include pulse(
+        $duration: 1s,
+        $count: 2,
+        $delay: .2s,
+        $function: ease
+      );
+    }
+  }
+
+    @include media("<450px"){
+        margin-top: 90vh;
+        padding: 10px 3rem;
+        height: 10vh;
+        margin-bottom: 0;
+      & .pull-left{
+        display: block;
+        font-size: 14px;
+      }
+      & .pull-right{
+          display: none;
+      }
+    }
+}
+
+// Home-page landing viewport wrap
+.landing-wrap{
+  top: 5vh;
+  width: 100%;
+  height: 95vh;
+  box-shadow: inset 0 100vh rgba(#000, 0.4);
+  overflow: hidden;
+  position: absolute;
+  & .container-fluid{
+    box-shadow: inset 0 12vh 80px rgba(#000, 0.1);
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+  }
+
+  // @include media("<768px"){
+  //   background: url("../assets/images/professional-business-woman.jpg") 60% center fixed no-repeat;
+  // }
+  @include media("<450px"){
+    height: auto;
+    top: 0;
+  }
+}
+
+.vegas{
+  width: 100%;
+  height: 95vh;
+  position: absolute;
+  z-index: -10;
+  overflow: hidden;
+  @include media("<450px"){
+    height: 100vh;
+  }
+}
+
+// Top Navigation General Styles
+%top-navigation{
+  width: 100%;
+  height: auto;
+  padding: 20px 50px 10px 50px;
+
+  & .brand{
+    font-size: 200%;
+    font-family: 'ralewaybold';
+    img{
+      max-width: 4rem;
+      display: inline-block;
+      margin-top: -20px;
+    }
+  }
+
+  & .nav-links{
+    margin-top: 0.6rem;
+    & a{
+      margin-right: 0.5rem;
+      font-family: 'ralewaybold';
+      transition: all 0.2s ease;
+    }
+  }
+
+  & .nav-item{
+    display: inline-block;
+    margin-left: 20px;
+    &:last-of-type{
+      margin-right: 0;
+      & a.nav-link{
+        margin-right: 0;
+      }
+    }
+  }
+
+  & .nav-link{
+    text-decoration: none;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  //<768px for mobile devices
+  @include media("<1025px"){
+    padding: 20px 20px 10px 20px;
+    & .brand{
+      font-size: 120%;
+      img{
+        max-width: 3rem;
+      }
+    }
+    & .nav-links{
+      display: none;
+    }
+  }
+
+  @include media(">768px", "<1025px") {
+    padding: 20px 50px 10px 50px;
+    & .brand{
+      font-size: 150%;
+      img{
+        max-width: 3rem;
+      }
+    }
+  }
+  
+}
+
+// Home-page Navigation Styling
+.custom-nav{
+  @extend %top-navigation;
+  position: absolute;
+  z-index: 5;
+  top: 5vh;
+  & .brand{
+    color: #fff;
+    & a{
+      color: #fff;
+    }
+    &:hover{
+      color:#fff;
+      text-decoration: none;
+    }
+    &:active{
+      color:#fff;
+      text-decoration: none;
+    }
+    &:focus{
+      color:#fff;
+      text-decoration: none;
+    }
+  }
+
+  & .nav-links{
+    & a{
+      color: $white;
+      &:hover{
+        color: $brand-color6;
+      }
+    }
+
+    & li[class*="active"]{
+      & a{
+          color: $brand-color6;
+      }
+    }
+  }
+  @include media("<450px"){
+    top: 1vh;
+  }
+ 
+}
+
+// Other Pages Navigation Styling
+.custom-nav-alt{
+  @extend %top-navigation;
+  position: fixed;
+  z-index: 150;
+  background-color: $white;
+  border-bottom: thin solid rgba($black, 0.2);
+  & .brand{
+    color: $brand-color1;
+    img{
+      color: $brand-color1;
+    }
+    & a{
+      color: $brand-color1;
+    }
+    &:hover{
+      color:$brand-color1;
+      text-decoration: none;
+    }
+  }
+
+  & .nav-links{
+    & a{
+      color: $brand-color1;
+      &:hover{
+        color: $brand-color6;
+      }
+    }
+
+    & li[class*="active"]{
+      & a{
+          color: $brand-color6;
+      }
+    }
+  }
+}
+
+// Home-page landing content
+.landing-content{
+  margin-top: 10%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  color: #fff;
+  position: absolute;
+  z-index: 2;
+  top: 50px;
+  & h1{
+    font-family: 'ralewaybold';
+    font-size: ms(3);
+    margin: 0;
+    line-height: 35px;
+    color: $brand-color6;
+  }
+  & p{
+    font-family: 'latolight';
+    font-size: ms(2);
+    margin: 10px 0 20px 0;
+    line-height: 25px;
+  }
+
+  @include media(">1280px"){
+    margin-top: 20%;
+    h1{
+      font-size: ms(4);
+      line-height: 60px;
+    }
+    p{
+      font-size: ms(1);
+    }
+  }
+
+  @include media("<450px"){
+
+    h1{
+      line-height: 45px;
+      font-size: ms(4);
+      margin-top: 20%;
+      margin-bottom: 20px;
+      line-height: 45px;
+    }
+
+    p{
+      font-size: 18px;
+      line-height: 16px;
+      /*margin-top: -10px;*/
+      margin-bottom: 30px;
+    }
+  }
+}
+
+// Landing section bottom bar
+.landing-bottom-bar{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  background-color: rgba($brand-color1, 0.9);
+  bottom: 0;
+  color: $white;
+  padding: 20px 3rem;
+  & h4{
+    font-family: 'ralewaybold';
+    vertical-align: middle;
+    & i{
+      margin-right: 10px;
+    }
+    & span{
+      color: $brand-color6;
+    }
+  }
+  & .livechat{
+    cursor: pointer;
+    &:hover{
+      @include pulse(
+        $duration: 1s,
+        $count: 2,
+        $delay: .2s,
+        $function: ease
+      );
+    }
+  }
+
+  @include media("<450px"){
+    margin-top: 90vh;
+    padding: 10px 3rem;
+    height: 10vh;
+    margin-bottom: 0;
+   & .pull-left{
+    display: block;
+    font-size: 14px;
+   }
+   & .pull-right{
+      display: none;
+   }
+ }
+
+}
+
+
+// Featurette Block
+.featurette-block{
+  & .heading{
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -.05rem;
+      font-size: ms(3);
+      font-family: 'ralewaybold';
+  }
+
+  & p.lead{
+      font-size: ms(0);
+      font-family: 'ralewayregular';
+  }
+}
+
+// Home-page Section 1
+.section-1{
+  top: 100vh;
+  padding: 3.5rem 0;
+  // padding-top: 3rem;
+  & .col-lg-4 {
+    //margin-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+  }
+  & h2 {
+    font-weight: normal;
+    font-size: ms(3);
+    font-family: 'ralewaybold';
+    margin-top: 1.5rem;
+  }
+  & p {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-family: 'ralewayregular';
+    font-size: ms(0);
+  }
+  & a.btn{
+    margin-top: 1rem;
+  }
+  @include media("<450px"){
+    padding: 1rem 0;
+    .col-lg-4{
+      padding-bottom: 2rem;
+      border-bottom: thin solid #eee;
+      &:nth-of-type(3){
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// Home-page Section 2
+.section-2{
+  padding: 3.5rem 0;
+  text-align: center;
+  background: url('https://www.performdev.com/wp-content/uploads/2016/01/running-corporate-learning.jpg') no-repeat;
+  background-size: cover;
+  height: 350px;
+  overflow: hidden;
+  color: $white;
+  & .heading{
+    margin-top: 3rem;
+  }
+  & p.lead{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  & a{
+    color: $white;
+    &:hover{
+      color: $white;
+    }
+  }
+  & .alpha-overlay{
+    position: absolute;
+    margin-top: -3.5rem;
+    width: 100%;
+    height: 350px;
+    display: block;
+    //z-index: 5;
+    background-color: rgba($brand-color1, 0.7);
+  }
+
+  @include media("<450px"){
+    & .heading{
+      margin-top: -1.5rem;
+      font-size: ms(2);
+      margin-bottom: 10px;
+    }
+
+    & p.lead{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+// Home-page Section 3
+.section-3{
+  padding: 3.5rem 0;
+  background-color: $brand-color1; //$brand-color4;
+}
+
+// Page Title Styles
+.page-title{
+  height: 40vh;
+  width: 100%;
+  background-size: cover;
+  box-shadow: inset 0 40vh rgba($brand-color1, 0.6);
+  color: rgba($white, 0.7);
+  padding-top: 20vh;
+  transition: all 0.3s ease-in;
+  & hr{
+    width: 200px;
+    margin-top: 10px;
+    border: thin solid rgba($white, 0.7);
+    transition: width 0.3s ease-in;
+  }
+  & i{
+    text-align: center;
+    @include center-block;
+  }
+  & h2{
+    text-align: center;
+    @include center-block;
+    font-family: 'ralewaythin';
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: ms(3);
+  }
+
+  & .inner-wrap{
+    min-width: 250px;
+    max-width: 300px;
+    padding: 20px;
+    border: thin solid rgba($white, 0.7);
+    @include center-block;
+  }
+
+  &:hover{
+    color: $white;
+    box-shadow: inset 0 40vh rgba($brand-color1, 0.8);
+    & hr{
+      width: 150px;
+    }
+
+    & .inner-wrap{
+      border: thin solid $white;
+    }
+  }
+}
+
+.about-img-header{
+  background: url('../assets/images/aboutus-header.jpg') no-repeat center center fixed; //city-skyline3.jpg
+}
+
+.services-img-header{
+  background: url('../assets/images/corporate2.jpg') no-repeat center center fixed; //city-skyline1.jpg
+}
+
+// about-page Section 1
+.about-section-1{
+  height: auto;
+  padding: 5rem 0;
+  & .intro-quote{
+    font-family: 'gentium_book_basicitalic';
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 0;
+  }
+  & h2 {
+    font-weight: normal;
+    font-size: ms(3);
+    font-family: 'ralewaybold';
+    //margin-top: 2rem;
+    text-align: center;
+  }
+  & p {
+    font-family: 'ralewayregular';
+    font-size: ms(0);
+    // line-height: 24px;
+    text-align: center;
+    // margin-top: 2rem;
+  }
+  & a.btn{
+    margin-top: 1rem;
+  }
+
+  & .image-wrap{
+    width: auto;
+    height: 500px;
+    overflow-y: hidden;
+  }
+
+   & hr{
+    width: 200px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: thin solid $brand-color1; //thin solid rgba($white, 0.7);
+    // transition: width 0.3s ease-in;
+  }
+}
+
+
+// about-page Section 2
+.about-section-2{
+  background: url('../assets/images/aboutus-header.jpg') no-repeat center center fixed; //city-skyline3.jpg
+  box-shadow: inset 0 50vh rgba($brand-color1, 0.8);
+  padding: 3.5rem 50px;
+  color: $white;
+  height: auto;
+  span{
+    font-size: ms(3);
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    color: $white;
+  }
+  & h4 {
+    font-weight: normal;
+    font-size: ms(2);
+    font-family: 'ralewaybold';
+    text-align: center;
+  }
+  & p {
+    font-family: 'ralewayregular';
+    font-size: ms(0);
+    text-align: center;
+    text-shadow: 0px 0px 10px rgba($brand-color1, 0.9);
+  }
+  & ul{
+    list-style: none;
+    display: block;
+    margin-left: 40%;
+    padding-left: 0;
+  }
+  @include media("<1025px"){
+    padding: 3.5rem 0;
+    box-shadow: inset 0 127vh rgba($brand-color1, 0.8);
+    max-height: 127vh;
+    & .col-xs-12{
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+
+// services-page Section 1
+.service-section-1{
+  height: auto;
+  padding: 4rem 0;
+  & .intro-quote{
+    font-family: 'gentium_book_basicitalic';
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    color: $brand-color1;
+  }
+
+  & h2 {
+    font-weight: normal;
+    font-size: ms(3);
+    font-family: 'ralewaybold';
+  }
+  & p {
+    font-family: 'ralewayregular';
+    font-size: ms(0);
+    text-align: center;
+  }
+  & hr{
+    width: 200px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: thin solid $brand-color1; //thin solid rgba($white, 0.7);
+  }
+
+  @include media(">1280px"){
+    padding: 5rem 0;
+
+  }
+}
+
+
+// Services-page section 2
+.service-section-2{
+   height: auto;
+
+  & hr.custom{
+    width: 200px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: thin solid $brand-color1; //thin solid rgba($white, 0.7);
+  }
+
+
+  .nav-tabs > li > a{
+    font-family: 'ralewaybold';
+    border-bottom: none;
+    transition: all 0.2s ease;
+    &:hover{
+      background-color: $brand-color2;
+      color:$white;
+      border-bottom: none;
+    }
+  }
+  .nav-tabs > li.active > a{
+    color: $white;
+    background-color: $brand-color1; //#5C86A5;
+    border: thin solid $brand-color1; //#5C86A5;
+    font-family: 'ralewaybold';
+    &:active{
+      border-bottom: thin solid $brand-color1; //#5C86A5;
+    }
+    &:hover{
+      border-bottom: thin solid $brand-color1; //#5C86A5;
+    }
+  }
+  .tab-content{
+
+    background-color: $brand-color1; //#5C86A5;
+    color: $white;
+    padding: 20px 20px 40px 20px;
+    min-height: 500px;
+    margin-bottom: 2rem;
+    text-align: center;
+    @include media("<500px"){
+        padding: 20px 10px;
+        min-height: 180vh;
+        height: auto;
+        overflow-y: auto;
+    }
+    // @include media(">768px", "<1025px") {
+    //   min-height: 180vh;
+    //   height: auto;
+    //   overflow-y: auto;
+    // }
+    & .overlay{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 2000;
+    }
+    & .intro-quote{
+        font-family: 'gentium_book_basicitalic';
+        text-align: center;
+        margin-bottom: 2rem;
+        margin-top: 3rem;
+        color: $white;
+        & small{
+          color: $white;
+        }
+    }
+    & hr{
+      width: 200px;
+      margin: 2rem auto;
+    }
+
+    & .image-left{
+      display: inline-block;
+      width: 45%;
+      height: 60vh;
+      float: left;
+      background-size: cover;
+      border: thick solid $white;
+      @include media("<500px"){
+        width: 100%;
+      }
+      @include media(">768px", "<1025px") {
+        width: auto;
+        height: 40vh;
+      }
+    }
+
+    & .image-right{
+      display: inline-block;
+      width: 45%;
+      height: 60vh;
+      float: right;
+      background-size: cover;
+      border: thick solid $white;
+      @include media("<500px"){
+        width: 100%;
+      }
+      @include media(">768px", "<1025px") {
+        width: auto;
+        height: 40vh;
+      }
+    }
+
+    & .rps-img{
+      background: url('../assets/images/r_p_s.jpg') no-repeat center center;
+    }
+
+    & .epm-img{
+      background: url('../assets/images/e_p_m2.jpg') no-repeat center center;
+    }
+
+    & .cld-img{
+      background: url('../assets/images/c_l_d2.jpg') no-repeat center center;
+    }
+
+    & .writeup-right{
+      display: inline-block;
+      float: right;
+      width: 50%;
+      height: auto;
+
+      @include media("<500px"){
+        width: 100%;
+      }
+    }
+
+    & .writeup-left{
+      display: inline-block;
+      float: left;
+      width: 50%;
+      height: auto;
+      @include media("<500px"){
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+// Angular Map Styles
+.angular-google-map-container { height: 400px; }
+
+
+// Contact page section
+.contact-section{
+  height: auto;
+  padding: 0 50px 3.5rem 50px;
+  border-bottom: thin solid rgba($black, 0.1);
+  & h2, h4 {
+    font-weight: normal;
+    font-family: 'ralewaybold';
+  }
+
+  & h2{
+    font-size: ms(3);
+  }
+
+  & h4{
+    font-size: ms(1);
+    margin-bottom: 40px;
+  }
+  & p {
+    font-family: 'ralewayregular';
+    font-size: ms(0);
+  }
+  @include media("<500px"){
+    padding: 0 0 3.5rem 0;
+  }
+}
+
+
+
+//Listing Styles
+.page-stretch{
+  min-height: 50vh;
+}
+.listing-padding-fix{
+  padding-top: 100px;
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  // margin: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  @include media("<500px"){
+    padding-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+  } 
+}
+.listing-header{
+  font-family: 'ralewayextrabold';
+  margin: 2rem 0;
+}
+
+.full-listing{
+  width: auto;
+  height: auto;
+  overflow: auto;
+}
+
+
+
+.listing-preview{
+  background-color: #eee;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease;
+  &:hover{
+    background-color: $brand-color6;
+  }
+  & h4.pull-left{
+    max-width: 70%;
+    // overflow: hidden;
+    // &:after{
+    //   content: ' ...';
+    // }
+  }
+}
+
+.ng-hide-add{
+  // transition: all 2s ease;
+  @include fadeOut(
+    $duration: 0s,
+    $function: ease
+  );
+}
+
+.ng-hide-add-remove{
+  // transition: all 2s ease;
+   @include fadeOut(
+    $duration: 0s,
+    $function: ease
+  );
+}
+
+.ng-hide-add-active,
+.ng-hide-remove-active {
+  transition: all 0s ease;
+}
+
+.full-listing-details{
+  padding: 20px;
+  // border-left: thick solid #eee;
+  margin-bottom: 20px;
+  background-color: #eee;
+  & hr{
+    border: none;
+    border-top: thin solid $brand-color1;
+  }
+}
+
+.item-label{
+  font-family: 'ralewaybold';
+  padding: 5px 10px;
+  background-color: lighten($black, 70%);
+  color: $white;
+}
+.job-title, .salary{
+  font-family: 'ralewaybold';
+}
+
+.job-title{
+  
+  @include media(">500px"){
+    float: left;
+  }
+}
+
+.salary{
+  float: right;
+  @include media("<500px"){
+    display: none;
+  }
+}
+
+.job-title.no-float{
+  float: none;
+}
+
+.salary.no-float{
+  float: none;
+}
+
+.job-button{
+  margin-top: 10px;
+  @include media("<500px"){
+    width: 100%;
+  }
+}
+
+.side-info-panel{
+  padding: 20px;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  color: $white;
+  border-radius: 6px;
+  background-color: $brand-color2;
+  margin-bottom: 100px;
+  & h4{
+    font-family: 'ralewaybold';
+  }
+  & .email{
+    font-family: 'ralewaybold';
+    text-transform: italic;
+  }
+}
+
+.resume-upload{
+  padding: 20px;
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  background-color: lighten($brand-color1, 10%); //$brand-color6;
+  color: $white;
+  & h4{
+    font-family: 'ralewaybold';
+    text-align: center;
+    font-size: ms(2);
+  }
+  & p{
+    text-align: center;
+  }
+
+  & .progress{
+    height: 35px;
+  }
+
+  & .progress {
+      display: inline-block;
+      width: 100%;
+      border: 3px solid #e5e5e5;//
+      border: none;
+      background-color: #e5e5e5;
+  }
+
+  & .progress div {
+      font-size: smaller;
+      background: $brand-success;
+      width: 0;
+      padding: 10px;
+      text-align: center;
+  }
+}
+
+
+
+// footer
+.upper-footer, .bottom-footer{
+  padding: 2% 50px;
+  color: $brand-color1; //darken($white, 10%);
+  line-height: ms(2);
+  & h4{
+    font-family: 'ralewaybold';
+    font-size: ms(2);
+  }
+
+  & p, a{
+    font-family: 'ralewayregular';
+    font-size: 13.5px;
+    color: $brand-color1; //$white;
+  }
+
+  & a{
+    transition: all 0.2s ease;
+    &:hover{
+      color: $brand-color6;
+      text-decoration: none;
+    }
+  }
+  & ul{
+    list-style: none;
+    padding-left: 0;
+    //line-height: ms(2);
+  }
+
+  & hr{
+    border-color: lighten($brand-color1, 10%);
+
+  }
+
+  & i{
+    display: inline;
+    margin-right: 20px;
+    color:$brand-color1; //$white;
+    transition: all 0.2s ease-in;
+    &[class*="fa-facebook-official"]{
+      &:hover, &:focus, &:active{
+        color: #3c5a98;
+      }
+    }
+
+    &[class*="fa-twitter"]{
+      &:hover, &:focus, &:active{
+        color: #55acee;
+      }
+    }
+
+    &[class*="fa-linkedin"]{
+      &:hover, &:focus, &:active{
+        color: #006699;
+      }
+    }
+  }
+
+  & .social{
+     & a{
+        text-decoration: none;
+        color: $white;
+        &:hover, &:focus, &:active{
+          text-decoration: none;
+          color: none;
+        }
+     }
+  }
+
+   @include media ("<450px"){
+      padding: 20px;
+      h4, p, a{
+        text-align: center;
+      }
+      .social a{
+        &:first-of-type{
+          margin-left: 25%;
+        }
+      }
+  }
+}
+
+.upper-footer{
+  background-color: $white; //$brand-color1;
+}
+
+.bottom-footer{
+  background-color: $brand-color1; //darken($brand-color1, 2%);
+  & .copyright{
+    color: $white;
+  }
+  & p, a{
+    color: $white;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  & a{
+    font-family: 'ralewaybold';
+    &:hover{
+      color: $brand-color6;
+    }
+  }
+}
+
+
+
+//Admin Login Form
+.login-wrap {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+  width: 100vw;
+  height: 100vh;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+//Administrator Panel Styles
+.admin-sidebar{
+  height: auto;
+  min-height: 100vh;
+  background-color: $brand-color1;
+  color: $white;
+  & .admin-page-title{
+    font-family: 'ralewayextrabold';
+    //text-align: center;
+    margin: 20px 0 0 0;
+  }
+  & hr{
+    border: none;
+    border-top: thin solid rgba($white, 0.1);
+  }
+
+  & ul{
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0 auto 0;
+    display: block;
+    line-height: ms(3);
+    & li a{
+      color: $white;
+      font-family: 'ralewaybold';
+      display: block;
+      font-size: 14px;
+      transition: color 0.2s ease;
+      &:hover{
+        text-decoration: none;
+        color: $brand-color6;
+      }
+      &:active{
+        text-decoration: none;
+        color: $brand-color6;
+      }
+      &:focus{
+        text-decoration: none;
+        color: $brand-color6;
+      }
+    }
+
+    & span{
+      margin-right: 10px;
+    }
+  }
+}
+.admin-content{
+  & .selector{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  & ul.nav{
+    background-color: $brand-color2;
+    margin-bottom: 20px;
+    & li:hover{
+      background-color: $brand-color1;
+    }
+    & li a{
+      border-radius: 0px;
+      font-family: 'ralewaybold';
+      color: $white;
+      &:active{
+        color:$brand-color6;
+      }
+      &:focus{
+        color:$brand-color6;
+      }
+      &:hover{
+        color:$brand-color6;
+        background-color: $brand-color2;
+      }
+    }
+  }
+
+  & legend{
+    font-family: 'ralewaybold';
+  }
+
+  & .listing-edit-list{
+    list-style: none;
+    padding-left: 0;
+    & li{
+      // width: 100%;
+      @include clearfix;
+      border: thin solid lighten($black, 80%);
+      padding: 10px 0 10px 10px;
+      transition: all 0.3s ease;
+      margin-bottom: 5px;
+      &:hover{
+        background-color: $brand-color4;
+        cursor: pointer;
+        border: $brand-color4;
+      }
+      & a{
+        text-decoration: none;
+        font-family: 'ralewaybold';
+        &:hover{
+          color: $white;
+        }
+      }
+      & button{
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.cv-listings{
+  .fa{
+    margin-right: 20px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .fa-download{
+    transition: all 0.6s;
+    &:hover{
+      color: $brand-success;
+    }
+  }
+
+  .fa-remove{
+    &:hover{
+      color: red;
+    }
+  }
+}

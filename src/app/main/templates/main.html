@@ -1,0 +1,139 @@
+<div class="landing-container"></div>
+<div class="top-bar hidden-xs">
+  <h4 class="pull-left"><i class="fa fa-phone fa-lg animated pulse infinite"></i>Call Us today @ &nbsp;<span>08037492675</span>&nbsp;&nbsp;,&nbsp;&nbsp;<span>07051766796</span></h4>
+  <!-- <h4 class="pull-right livechat"><i class="fa fa-comments-o fa-lg"></i> Live Chat</h4> -->
+  <h4 class="pull-right"><a href="https://www.facebook.com/whiteBridgeconsulting"><i class="fa fa-facebook-official fa-4x"></i></a></h4>
+  <h4 class="pull-right"><a href="https://twitter.com/bridgingHR"><i class="fa fa-twitter fa-4x"></i></a></h4>
+  <h4 class="pull-right"><a href="https://www.linkedin.com/in/whitebridge-consulting-6b7653b7"><i class="fa fa-linkedin fa-4x"></i></a></h4>
+</div><!-- /.top-bar-->
+
+<div class="landing-wrap">
+  <div vegas-slider></div>
+  <div class="container-fluid">
+
+    <header class="custom-nav">
+      <div class="header-main">
+        <a class="brand" href="#">
+          <img src="assets/images/wblogo_white.svg" alt="">
+          Whitebridge Consulting
+        </a>
+        <ul class="nav-links pull-right">
+          <li class="nav-item active">
+            <a class="nav-link" ui-sref="home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="services">Our Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="jobs">Jobs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="events">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="blog">Insights</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="landing-content col-xs-12 col-md-6">
+        <div class="text-slider">
+          <div class="slide" ng-if="$index == main.slideNo"  ng-repeat="sl in main.caption">
+            <h1>{{ sl.header }}</h1>
+            <p ng-bind-html="sl.body"></p>
+            <a ui-sref="{{ sl.link }}" class="btn btn-lg brand-btn-warn">{{ sl.action }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- End of landing wrap-->
+
+
+<section class="featurette-block section-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h2>Who we are</h2>
+        <p>A consulting firm that seeks to bridge the gaps in manpower supply, efficiency &amp; knowledge within organisations, thus improving the success rate in achieving goals &amp; objectives.</p>
+        <p><a class="btn brand-btn-success btn-lg" ui-sref="about" role="button">Learn more </a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <h2>What we do</h2>
+        <p>We help organisations attract, recruit ,develop &amp; retain a qualified workforce with the right balance at all times.</p>
+        <p><a class="btn brand-btn-success btn-lg" ui-sref="services" role="button">Learn more </a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <h2>Why Us</h2>
+        <p>We have assisted organisations attract competent employees and we have improved workforce efficiency through our training programs. We can do the same for your organisation.</p>
+        <p><a class="btn brand-btn-success btn-lg" ui-sref="about" role="button">Learn more </a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+  </div>
+</section>
+
+
+<section class="featurette-block section-2">
+  <div class="alpha-overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="heading">Developing Employees &amp; Growing Organizations</h2>
+        <p class="lead">We provide you with the tools &amp; training you need to grow your workforce capabilities as well as achieve your Organization's Human Resource goals</p>
+        <a class="btn brand-btn-neg btn-lg" ui-sref="services">See how we can help you</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div content-slider></div>
+
+<section class="featurette-block section-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="widget panel">
+            <div class="panel-body">
+              <h4 class="widget-title mb0">Latest Jobs</h4>
+            </div>
+
+            <ul class="list-group" ng-repeat="job in main.jobs | limitTo:3">
+              <li class="list-group-item listing">
+                <a ui-sref="jobs" title="" class="postingWrap">
+                  <p class="nm" >{{ job.title }}</p>
+                  <small class="text-muted">1 day ago</small>
+                </a>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="widget panel">
+            <div class="panel-body">
+              <h4 class="widget-title mb0">Upcoming Events</h4>
+            </div>
+
+            <ul class="list-group" ng-repeat="event in main.events | limitTo:3">
+              <li class="list-group-item listing">
+                <a ui-sref="events" title="" class="postingWrap">
+                  <p class="nm">{{ event.title }}</p>
+                  <small class="text-muted">1 day ago</small>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<div global-footer></div>

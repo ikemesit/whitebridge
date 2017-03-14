@@ -1,0 +1,12 @@
+
+    <div class="modal-header">
+        <h3 class="modal-title" >{{ modal.selected.item.name }}</h3>
+        <p>{{ modal.selected.item.qualifications }}</p>
+    </div>
+    <div class="modal-body" ng-bind-html="modal.selected.item.desc">
+        <!-- {{ modal.selected.item.desc}} -->
+    </div>
+    <div class="modal-footer">
+        <!-- <button class="btn btn-primary" type="button" ng-click="ok()">OK</button> -->
+        <button class="btn btn-warning" type="button" ng-click="$close()">Close</button>
+    </div>

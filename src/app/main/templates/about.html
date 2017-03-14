@@ -1,0 +1,130 @@
+<header class="custom-nav-alt">
+  <a class="brand" ui-sref="home">
+    <img src="assets/images/wblogo.svg" alt="">
+    <span class="hidden-xs">Whitebridge Consulting</span>
+  </a>
+  <ul class="nav-links pull-right">
+    <li class="nav-item">
+      <a class="nav-link" ui-sref="home">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" ui-sref="about">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" ui-sref="services">Our Services</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" ui-sref="jobs">Jobs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" ui-sref="events">Events</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" ui-sref="blog">Insights</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" ui-sref="contact">Contact Us</a>
+    </li>
+  </ul>
+   <button type="button" class="navbar-toggle collapsed" data-template-url="app/components/aside/aside.template.html" data-placement="right" data-animation="am-slide-right" bs-aside="aside" data-container="body" aria-expanded="false">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button> 
+</header>
+<div class="page-title about-img-header">
+  <div class="inner-wrap">
+    <h2>About Us</h2>
+  </div>
+  <!-- <hr> -->
+</div>
+
+
+<section class="featurette-block about-section-1">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- <div class="col-sm-6">
+        <div class="image-wrap">
+          <img src="assets/images/city-skyline4.jpg" alt="" class="img-responsive">
+        </div>
+      </div> -->
+      <div class="col-sm-offset-2 col-sm-8">
+        <!-- <h2>About Us</h2> -->
+        <!-- <hr> -->
+        <h2 class="intro-quote">A commitment to excellence</h2>
+        <hr>
+        <p>At Whitebridge global consulting limited we understand that people are the core of any organisation. We understand that at the core of any successful organisation lies a competent workforce. To help organisations and professionals meet these challenges, we specialise in identifying & matching professionals to the right Jobs in the right environments.</p>
+
+        <p>Our clients enjoy high performance from the highly motivated employees we recommend,leading to sustainable growth. To achieve this we equip professionals with the right skill set through our learning &amp; development programs.</p>
+ 
+        <p>Our unlimited enthusiasm translates to the stellar delivery of our services from engagement to execution. Our emphasis on teamwork &amp; mutual respect bodes well with our clients &amp; stakeholders alike, generating the synergy needed to achieve strategic HR goals &amp; objectives.</p>
+      </div><!-- /.col-md-7 -->
+      <!-- <div class="col-md-5">
+      	<img src="http://www.piiac.com/Resources/SiteAssets/Pages/CareerCtr/default/5%20young%20professionals.jpg" alt="" class="img-fluid">
+        <div class="vertical-nav-skewed"></div>
+      </div> --><!-- /.col-md-5 -->
+    </div><!-- /.row -->
+  </div>
+</section>
+
+
+<section class="about-section-2">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+      	<span class="glyphicon glyphicon-eye-open"></span>
+        <h4>Our Vision</h4>
+        <p>To be the benchmark of Human Resource Consulting in Nigeria while leveraging on International best practices.</p>
+      </div><!-- /.col-md-4 -->
+      <div class="col-xs-12 col-md-4">
+      	<span class="glyphicon glyphicon-bullhorn"></span>
+        <h4>Our Mission</h4>
+        <p>To deliver value to our clients by unlocking the potentials of its human capital for personal &amp; corporate fulfillment through expert &amp; excellent services.</p>
+      </div><!-- /.col-md-4 -->
+      <div class="col-xs-12 col-md-4">
+      	<span class="glyphicon glyphicon-thumbs-up"></span>
+        <h4>Our Core Values</h4>
+        <ul>
+        	<li><strong>S</strong>- Service</li>
+			<li><strong>T</strong>- Transparency</li>
+			<li><strong>T</strong>- Teamwork</li>
+			<li><strong>P</strong>- Passion</li>
+        </ul>
+      </div><!-- /.col-md-4 -->
+    </div><!-- /.row -->
+  </div>
+</section>
+
+
+<section class="about-section-3">
+        
+    <div class="container">
+      <div class="center-heading">
+          <h2>Our Faculty Members</h2>
+          <span class="center-line"></span>
+      </div> 
+
+      <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+              <div class="row">
+                  <div class="col-sm-4 margin40" ng-repeat="facilitator in main.facilitatorsSubData">
+                      <div class="item-img-wrap ">
+                          <img ng-src="{{ facilitator.imageUrl }}" class="img-responsive" alt="workimg">
+                          <div class="item-img-overlay">
+                              <a href="#" ng-click="$event.preventDefault(); main.grabSelected(facilitator); main.openModal('lg'); ">
+                                  <span></span>
+                              </a>
+                          </div>
+                      </div> 
+                      <div class="work-desc">
+                          <h4><a>{{ facilitator.name }}</a></h4>
+                          <!-- <span>{{ facilitator.qualifications }} </span> -->
+                      </div><!--work desc-->
+                  </div><!--facilitator col end-->
+              </div><!--speakers row end-->
+          </div>
+      </div>
+    </div>
+</section>
+<div global-footer></div>
